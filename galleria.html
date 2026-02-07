@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galleria - Borgo di Saturnia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260201" />
+  </head>
+  <body>
+    <div
+      class="global-weather"
+      data-thermal="37.5"
+    >
+      <span class="global-weather-label">Meteo Saturnia</span>
+      <span class="global-weather-value" aria-live="polite">Caricamento...</span>
+      <div class="global-weather-row">
+        <span class="global-weather-thermal"></span>
+        <button class="global-weather-toggle" type="button" aria-label="Apri meteo settimanale">
+          <svg class="global-weather-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="global-weather-close"
+        type="button"
+        aria-label="Chiudi meteo"
+      >
+        X <span class="weather-close-text">Chiudi</span>
+      </button>
+      <div class="global-weather-weekly" id="global-weather-weekly" hidden>
+        <p class="global-weather-weekly-title">Prossimi 7 giorni</p>
+        <p class="global-weather-weekly-status">Caricamento...</p>
+        <ul class="global-weather-weekly-list"></ul>
+      </div>
+    </div>
+    <div class="visitor-widget" id="visitor-widget" aria-live="polite">
+      <span class="visitor-eyebrow">Stima visitatori</span>
+      <p class="visitor-title">Provincia di Grosseto</p>
+      <div class="visitor-grid">
+        <div class="visitor-stat">
+          <span class="visitor-label">Arrivi</span>
+          <span class="visitor-value" id="visitor-arrivi">-</span>
+        </div>
+        <div class="visitor-stat">
+          <span class="visitor-label">Presenze</span>
+          <span class="visitor-value" id="visitor-presenze">-</span>
+        </div>
+      </div>
+      <p class="visitor-meta" id="visitor-year">Anno: -</p>
+      <button class="visitor-close" type="button" aria-label="Chiudi stima visitatori">X <span class="visitor-close-text">Chiudi</span></button>
+      <p class="visitor-source">
+        Fonte: ISTAT, movimento clienti negli esercizi ricettivi (annuale).
+      </p>
+    </div>
+    <main class="page">
+      <nav class="site-nav" aria-label="Menu principale">
+        <a class="nav-tab" href="index.html">Borgo</a>
+        <a class="nav-tab is-active" href="galleria.html" aria-current="page">
+          Galleria
+        </a>
+        <a class="nav-tab" href="dove-mangiare.html">
+          <span class="nav-label-full">Mangiare</span>
+          <span class="nav-label-short">Mangiare</span>
+        </a>
+        <a class="nav-tab" href="dove-dormire.html">
+          <span class="nav-label-full">Dormire</span>
+          <span class="nav-label-short">Dormire</span>
+        </a>
+        <details class="nav-dropdown">
+          <summary class="nav-tab">
+            <span class="nav-label-full">Cosa fare</span>
+            <span class="nav-label-short">Cosa fare</span>
+          </summary>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="cosa-fare.html#cavallo">Cavallo</a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#degustazioni">
+              Degustazioni
+            </a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#golf">Golf</a>
+          </div>
+        </details>
+        <a class="nav-tab" href="eventi.html">Eventi</a>
+        <a class="nav-tab" href="nelle-vicinanze.html">
+          <span class="nav-label-full">Nelle vicinanze</span>
+          <span class="nav-label-short">Vicinanze</span>
+        </a>
+      </nav>
+      <header class="hero">
+        <p class="eyebrow">Borgo di Saturnia</p>
+        <h1>Galleria</h1>
+        <p class="subtitle">
+          Una selezione di scorci e dettagli del borgo e del suo paesaggio.
+        </p>
+      </header>
+      <section class="gallery-section gallery-video-section" id="galleria">
+        <h2 class="gallery-title" id="panoramica-borgo">Panoramica borgo</h2>
+        <div class="gallery-video-grid">
+          <figure class="gallery-card">
+            <iframe
+              class="gallery-video is-embed"
+              src="https://www.youtube.com/embed/lMNGXrr8sD0?autoplay=1&mute=1&loop=1&playlist=lMNGXrr8sD0&controls=0&modestbranding=1&playsinline=1&rel=0"
+              title="Panoramica del borgo di Saturnia"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <figcaption class="gallery-caption">
+              Panoramica del borgo di Saturnia.
+            </figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <iframe
+              class="gallery-video is-embed"
+              src="https://www.youtube.com/embed/o1-h81ekKSA?autoplay=1&mute=1&loop=1&playlist=o1-h81ekKSA&controls=0&modestbranding=1&playsinline=1&rel=0"
+              title="Panoramica del borgo con attivita"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <figcaption class="gallery-caption">
+              Panoramica del borgo con attivita.
+            </figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <iframe
+              class="gallery-video is-embed"
+              src="https://www.youtube.com/embed/of7QtqXYgzY?autoplay=1&mute=1&loop=1&playlist=of7QtqXYgzY&controls=0&modestbranding=1&playsinline=1&rel=0"
+              title="Panoramica del castello di Saturnia"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <figcaption class="gallery-caption">
+              Panoramica del castello di Saturnia.
+            </figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <iframe
+              class="gallery-video is-embed"
+              src="https://www.youtube.com/embed/Cxld3Yj4c7E?autoplay=1&mute=1&loop=1&playlist=Cxld3Yj4c7E&controls=0&modestbranding=1&playsinline=1&rel=0"
+              title="Panoramica borgo di Saturnia"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <figcaption class="gallery-caption">
+              Panoramica borgo di Saturnia.
+            </figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <iframe
+              class="gallery-video is-embed"
+              src="https://www.youtube.com/embed/L9iDJxClOlI?autoplay=1&mute=1&loop=1&playlist=L9iDJxClOlI&controls=0&modestbranding=1&playsinline=1&rel=0"
+              title="Veduta generale di Saturnia"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <figcaption class="gallery-caption">
+              Veduta generale di Saturnia.
+            </figcaption>
+          </figure>
+</div>
+      </section>
+      <div class="gallery-duo">
+        <section class="gallery-section gallery-video-section" id="cascatelle-del-mulino">
+          <h2 class="gallery-title">Cascatelle del Mulino</h2>
+          <div class="gallery-video-grid">
+            <figure class="gallery-card">
+              <iframe
+                class="gallery-video is-embed"
+                src="https://www.youtube.com/embed/13hudUrJ30g?autoplay=1&mute=1&loop=1&playlist=13hudUrJ30g&controls=0&modestbranding=1&playsinline=1&rel=0"
+                title="Cascatelle del Mulino"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+              <figcaption class="gallery-caption">
+                Cascatelle del Mulino.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+        <section
+          class="gallery-section gallery-video-section"
+          id="terme-di-saturnia-natural-destination"
+        >
+          <h2 class="gallery-title">Terme di Saturnia Natural Destination</h2>
+          <div class="gallery-video-grid">
+            <figure class="gallery-card">
+              <iframe
+                class="gallery-video is-embed"
+                src="https://www.youtube.com/embed/ZqJY7ghRzjU?autoplay=1&mute=1&loop=1&playlist=ZqJY7ghRzjU&controls=0&modestbranding=1&playsinline=1&rel=0"
+                title="Parco termale, club e spa"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+              <figcaption class="gallery-caption">
+                Parco termale, club e spa.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+    </main>
+    <div class="gallery-modal" id="gallery-modal" hidden>
+      <div
+        class="gallery-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="gallery-modal-title"
+      >
+        <button
+          class="gallery-modal-close"
+          type="button"
+          id="gallery-modal-close"
+          aria-label="Chiudi video"
+        >
+          Chiudi
+        </button>
+        <h3 class="gallery-modal-title" id="gallery-modal-title">Video panoramica</h3>
+        <video
+          class="gallery-modal-video"
+          id="gallery-modal-video"
+          controls
+          playsinline
+        ></video>
+        <p class="gallery-modal-caption" id="gallery-modal-caption"></p>
+      </div>
+    </div>
+    <script>
+      const galleryVideos = document.querySelectorAll("video.gallery-video");
+      const galleryModal = document.querySelector("#gallery-modal");
+      const galleryModalVideo = document.querySelector("#gallery-modal-video");
+      const galleryModalClose = document.querySelector("#gallery-modal-close");
+      const galleryModalTitle = document.querySelector("#gallery-modal-title");
+      const galleryModalCaption = document.querySelector("#gallery-modal-caption");
+
+      const openGalleryModal = (video) => {
+        if (!galleryModal || !galleryModalVideo || !video) return;
+        const source = video.currentSrc || video.src;
+        if (!source) return;
+        const caption = video.closest("figure")?.querySelector(".gallery-caption");
+        const captionText = caption ? caption.textContent.trim() : "";
+        if (galleryModalTitle) {
+          galleryModalTitle.textContent = captionText || "Video panoramica";
+        }
+        if (galleryModalCaption) {
+          galleryModalCaption.textContent = captionText;
+          galleryModalCaption.hidden = !captionText;
+        }
+        galleryModalVideo.src = source;
+        galleryModalVideo.currentTime = 0;
+        galleryModal.hidden = false;
+        galleryModal.removeAttribute("hidden");
+        document.body.classList.add("modal-open");
+        galleryModalVideo.play().catch(() => {});
+        if (galleryModalClose) {
+          galleryModalClose.focus();
+        }
+      };
+
+      const closeGalleryModal = () => {
+        if (!galleryModal || !galleryModalVideo) return;
+        galleryModalVideo.pause();
+        galleryModalVideo.removeAttribute("src");
+        galleryModalVideo.load();
+        galleryModal.hidden = true;
+        galleryModal.setAttribute("hidden", "");
+        document.body.classList.remove("modal-open");
+      };
+
+      galleryVideos.forEach((video) => {
+        video.setAttribute("tabindex", "0");
+        video.addEventListener("click", () => openGalleryModal(video));
+        video.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          openGalleryModal(video);
+        });
+      });
+
+      if (galleryModalClose) {
+        galleryModalClose.addEventListener("click", (event) => {
+          event.preventDefault();
+          closeGalleryModal();
+        });
+      }
+
+      if (galleryModal) {
+        galleryModal.addEventListener("click", (event) => {
+          if (event.target === galleryModal) {
+            closeGalleryModal();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && galleryModal && !galleryModal.hidden) {
+          closeGalleryModal();
+        }
+      });
+    </script>
+    <script>
+      const visitorArrivi = document.getElementById("visitor-arrivi");
+      const visitorPresenze = document.getElementById("visitor-presenze");
+      const visitorYear = document.getElementById("visitor-year");
+
+      const formatNumber = (value) =>
+        new Intl.NumberFormat("it-IT").format(Math.round(value));
+
+      const extractLatestObservation = (payload) => {
+        const dataset = payload?.data?.dataSets?.[0];
+        const series = dataset?.series;
+        const seriesKey = series ? Object.keys(series)[0] : null;
+        const observations = seriesKey ? series[seriesKey]?.observations : null;
+        const timeValues =
+          payload?.data?.structure?.dimensions?.observation?.[0]?.values || [];
+
+        if (!observations || !timeValues.length) {
+          return null;
+        }
+
+        let latest = null;
+        Object.keys(observations).forEach((key) => {
+          const idx = Number(key);
+          const value = observations[key]?.[0];
+          const time = timeValues[idx]?.id;
+          if (value == null || !time) {
+            return;
+          }
+          if (!latest || time > latest.time) {
+            latest = { time, value };
+          }
+        });
+
+        return latest;
+      };
+
+      const loadVisitorData = async () => {
+        try {
+          const response = await fetch("data/istat-grosseto.json");
+          if (!response.ok) {
+            throw new Error("Local data not found");
+          }
+          const data = await response.json();
+          if (!data || data.arrivi == null || data.presenze == null) {
+            throw new Error("Invalid data");
+          }
+          visitorArrivi.textContent = formatNumber(data.arrivi);
+          visitorPresenze.textContent = formatNumber(data.presenze);
+          visitorYear.textContent = `Anno: ${data.anno}`;
+        } catch (error) {
+          if (visitorYear) {
+            visitorYear.textContent = "Dati non disponibili al momento.";
+          }
+        }
+      };
+
+      loadVisitorData();
+
+      const visitorWidget = document.getElementById("visitor-widget");
+      const visitorClose = document.querySelector(".visitor-close");
+      const visitorWidgetState = "visitor-widget-collapsed";
+      if (visitorWidget && window.localStorage) {
+        const isCollapsed = window.localStorage.getItem(visitorWidgetState) === "1";
+        if (isCollapsed) {
+          visitorWidget.classList.add("is-collapsed");
+        }
+      }
+      if (visitorClose && visitorWidget) {
+        visitorClose.addEventListener("click", (event) => {
+          event.stopPropagation();
+          visitorWidget.classList.toggle("is-collapsed");
+          if (window.localStorage) {
+            window.localStorage.setItem(visitorWidgetState, visitorWidget.classList.contains("is-collapsed") ? "1" : "0");
+          }
+        });
+      }
+
+      if (visitorWidget) {
+        visitorWidget.addEventListener("click", () => {
+          if (visitorWidget.classList.contains("is-collapsed")) {
+            visitorWidget.classList.remove("is-collapsed");
+            if (window.localStorage) {
+              window.localStorage.setItem(visitorWidgetState, "0");
+            }
+          }
+        });
+      }
+    </script>
+    <script src="weather-widget.js?v=20260201"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,30 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Mappa di Saturnia</title>
+  <desc id="desc">Segnaposto grafico in attesa della mappa reale.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f0e3" />
+      <stop offset="1" stop-color="#e7cfb4" />
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c8724d" stop-opacity="0.7" />
+      <stop offset="1" stop-color="#5f6b3d" stop-opacity="0.7" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <g fill="none" stroke="url(#line)" stroke-width="6" stroke-linecap="round">
+    <path d="M140 520 C 260 470, 340 430, 460 360" />
+    <path d="M360 560 C 500 520, 660 470, 820 380" />
+    <path d="M250 250 C 380 210, 530 220, 700 260" />
+    <path d="M620 150 C 720 200, 850 260, 1030 280" />
+  </g>
+  <g fill="#c8724d" opacity="0.55">
+    <circle cx="330" cy="360" r="10" />
+    <circle cx="600" cy="300" r="10" />
+    <circle cx="830" cy="380" r="10" />
+  </g>
+  <g font-family="serif" text-anchor="middle" fill="#2f2b25">
+    <text x="600" y="330" font-size="54" letter-spacing="4">Mappa di Saturnia</text>
+    <text x="600" y="380" font-size="22" letter-spacing="2">Segnaposto in attesa dell'immagine</text>
+  </g>
+</svg>

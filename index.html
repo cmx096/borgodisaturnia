@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Borgo di Saturnia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260201" />
+  </head>
+  <body class="has-video-bg">
+    <div
+      class="global-weather"
+      data-thermal="37.5"
+    >
+      <span class="global-weather-label">Meteo Saturnia</span>
+      <span class="global-weather-value" aria-live="polite">Caricamento...</span>
+      <div class="global-weather-row">
+        <span class="global-weather-thermal"></span>
+        <button class="global-weather-toggle" type="button" aria-label="Apri meteo settimanale">
+          <svg class="global-weather-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="global-weather-close"
+        type="button"
+        aria-label="Chiudi meteo"
+      >
+        X <span class="weather-close-text">Chiudi</span>
+      </button>
+      <div class="global-weather-weekly" id="global-weather-weekly" hidden>
+        <p class="global-weather-weekly-title">Prossimi 7 giorni</p>
+        <p class="global-weather-weekly-status">Caricamento...</p>
+        <ul class="global-weather-weekly-list"></ul>
+      </div>
+    </div>
+    <div class="page-background" aria-hidden="true">
+      <iframe
+        class="page-background-video is-embed"
+        src="https://www.youtube.com/embed/sYfid1NOOp8?autoplay=1&mute=1&loop=1&playlist=sYfid1NOOp8&controls=0&modestbranding=1&playsinline=1&rel=0"
+        title="Sfondo Borgo di Saturnia"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+    <div class="visitor-widget" id="visitor-widget" aria-live="polite">
+      <span class="visitor-eyebrow">Stima visitatori</span>
+      <p class="visitor-title">Provincia di Grosseto</p>
+      <div class="visitor-grid">
+        <div class="visitor-stat">
+          <span class="visitor-label">Arrivi</span>
+          <span class="visitor-value" id="visitor-arrivi">-</span>
+        </div>
+        <div class="visitor-stat">
+          <span class="visitor-label">Presenze</span>
+          <span class="visitor-value" id="visitor-presenze">-</span>
+        </div>
+      </div>
+      <p class="visitor-meta" id="visitor-year">Anno: -</p>
+      <button class="visitor-close" type="button" aria-label="Chiudi stima visitatori">X <span class="visitor-close-text">Chiudi</span></button>
+      <p class="visitor-source">
+        Fonte: ISTAT, movimento clienti negli esercizi ricettivi (annuale).
+      </p>
+    </div>
+    <main class="page">
+      <nav class="site-nav" aria-label="Menu principale">
+        <a class="nav-tab is-active" href="index.html" aria-current="page">Borgo</a>
+        <a class="nav-tab" href="galleria.html">Galleria</a>
+        <a class="nav-tab" href="dove-mangiare.html">
+          <span class="nav-label-full">Mangiare</span>
+          <span class="nav-label-short">Mangiare</span>
+        </a>
+        <a class="nav-tab" href="dove-dormire.html">
+          <span class="nav-label-full">Dormire</span>
+          <span class="nav-label-short">Dormire</span>
+        </a>
+        <details class="nav-dropdown">
+          <summary class="nav-tab">
+            <span class="nav-label-full">Cosa fare</span>
+            <span class="nav-label-short">Cosa fare</span>
+          </summary>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="cosa-fare.html#cavallo">Cavallo</a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#degustazioni">
+              Degustazioni
+            </a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#golf">Golf</a>
+          </div>
+        </details>
+        <a class="nav-tab" href="eventi.html">Eventi</a>
+        <a class="nav-tab" href="nelle-vicinanze.html">
+          <span class="nav-label-full">Nelle vicinanze</span>
+          <span class="nav-label-short">Vicinanze</span>
+        </a>
+      </nav>
+      <header class="hero" id="borgo">
+        <p class="eyebrow">Toscana, Italia</p>
+        <h1>Borgo di Saturnia</h1>
+        <p class="subtitle">
+          Un luogo sospeso tra pietra antica, acque termali e colline dorate.
+        </p>
+      </header>
+
+      <div class="borgo-layout">
+        <section class="map-section">
+          <figure class="map" data-view="fumetto">
+          <figcaption class="map-caption">
+            Clicca queste categorie per vederli in mappa.
+          </figcaption>
+          <div class="map-filters" role="group" aria-label="Filtri mappa">
+              <button
+                class="filter-toggle"
+                type="button"
+                data-filter="hotel"
+                aria-pressed="false"
+              >
+                <span class="filter-label-full">Strutture alberghiere</span>
+                <span class="filter-label-short">Hotel</span>
+              </button>
+              <button
+                class="filter-toggle"
+                type="button"
+                data-filter="ristoranti"
+                aria-pressed="false"
+              >
+                <span class="filter-label-full">Ristoranti e trattorie</span>
+                <span class="filter-label-short">Risto</span>
+              </button>
+              <button
+                class="filter-toggle"
+                type="button"
+                data-filter="bar"
+                aria-pressed="false"
+              >
+                <span class="filter-label-full">Bar</span>
+                <span class="filter-label-short">Bar</span>
+              </button>
+              <button
+                class="filter-toggle"
+                type="button"
+                data-filter="alimentari"
+                aria-pressed="false"
+              >
+                <span class="filter-label-full">Alimentari</span>
+                <span class="filter-label-short">Alim.</span>
+              </button>
+            </div>
+            <div class="map-frame">
+              <div
+                class="map-controls"
+                role="group"
+                aria-label="Seleziona la vista della mappa"
+              >
+                <button
+                  class="view-toggle is-active"
+                  type="button"
+                  data-view="fumetto"
+                  aria-pressed="true"
+                >
+                  Fumetto
+                </button>
+                <button
+                  class="view-toggle"
+                  type="button"
+                  data-view="realistica"
+                  aria-pressed="false"
+                >
+                  Realistica
+                </button>
+              </div>
+              <div class="map-viewport">
+                <img
+                  class="map-img"
+                  data-view="fumetto"
+                  src="assets/images/SATURNIA.png"
+                  alt="Mappa di Saturnia in stile fumetto"
+                  loading="lazy"
+                />
+                <img
+                  class="map-img"
+                  data-view="realistica"
+                  src="assets/images/SATURNIAR.png"
+                  alt="Mappa di Saturnia in stile realistico"
+                  loading="lazy"
+                />
+                <div
+                  class="map-overlay"
+                  role="group"
+                  aria-label="Punti del borgo"
+                >
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 60%; --y: 70%;"
+                  data-id="castello"
+                  data-title="Castello di Saturnia"
+                  data-summary="La rocca che veglia sul borgo da quasi mille anni."
+                  data-image="assets/images/monumenti/castellodisaturnia.jpg"
+                  data-image-alt="Castello di Saturnia"
+                  data-description="Il Castello di Saturnia, noto anche come Rocca Aldobrandesca, rappresenta il cuore militare e simbolico del borgo. Oggi ne restano porzioni integrate nella cinta muraria e nelle strutture urbane, ma per secoli e stato il fulcro del potere politico, difensivo e amministrativo della citta. Origini e date storiche: le prime fortificazioni sul sito risalgono con ogni probabilita all'Alto Medioevo, ma l'impianto castellano vero e proprio si sviluppo tra il X-XI secolo, quando Saturnia entro stabilmente nell'orbita dei conti Aldobrandeschi, una delle famiglie piu potenti della Toscana meridionale. La scelta del luogo non fu casuale: il castello sorse su un'area gia strategica in epoca romana, probabilmente occupata da strutture di controllo e difesa legate alla colonia di Saturnia (fondata nel 183 a.C.). Nel corso dei secoli successivi, il castello fu conteso tra grandi poteri regionali, fino a passare sotto il controllo della Repubblica di Siena nel XIV secolo, che ne rafforzo le difese adattandole alle nuove tecniche militari. Struttura e funzione: il castello non era solo una residenza signorile, ma una vera e propria rocca militare. Comprendeva una torre principale (oggi parzialmente conservata), ambienti di presidio e controllo, collegamenti diretti con la cinta muraria, di cui costituiva il punto piu forte. Dall'alto della rocca si dominavano le vie di accesso al borgo e il territorio circostante, consentendo un controllo visivo fondamentale in un'epoca segnata da conflitti e instabilita. Curiosita storiche: il castello faceva parte di un sistema difensivo integrato, insieme alle porte urbane (come Porta Romana) e alle mura medievali. In caso di assedio, la rocca rappresentava l'ultimo rifugio per la popolazione e per le autorita locali. Con il declino dell'importanza militare di Saturnia, tra XV e XVI secolo, il castello perse progressivamente la sua funzione originaria e venne in parte riutilizzato o inglobato nelle abitazioni del borgo."
+                  aria-label="Castello di Saturnia"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 54%; --y: 50%;"
+                  data-id="piazza-centrale"
+                  data-title="Piazza Vittorio Veneto"
+                  data-summary="Il cuore civile, religioso e sociale del borgo."
+                  data-image="assets/images/monumenti/Piazza%20Vittorio%20Veneto.jpg"
+                  data-image-alt="Piazza Vittorio Veneto"
+                  data-description="La Piazza Vittorio Veneto e la piazza centrale di Saturnia e da secoli rappresenta il punto di incontro tra la vita quotidiana del borgo, la sua storia e la sua identita comunitaria. Qui convergono le principali direttrici del centro storico e qui si affacciano alcuni degli edifici piu significativi, rendendola il vero fulcro urbano del paese. Origini storiche: l'area della piazza coincide con uno dei nuclei piu antichi dell'abitato. In epoca romana questa zona era probabilmente occupata da spazi pubblici e strutture connesse alla vita civile della colonia di Saturnia (fondata nel 183 a.C.). Nel Medioevo, con la riorganizzazione del borgo fortificato, lo spazio assunse progressivamente il ruolo di piazza principale, diventando il luogo destinato alle assemblee, al mercato e alla vita collettiva. L'attuale intitolazione a Vittorio Veneto risale al XX secolo, come molte piazze italiane dedicate alla memoria della vittoria nella Prima guerra mondiale. Assetto urbano e architettura: la piazza si presenta come uno spazio raccolto e armonico, perfettamente integrato nel tessuto medievale di Saturnia. Gli edifici che la circondano, costruiti in pietra locale, raccontano secoli di trasformazioni architettoniche, mantenendo pero un forte equilibrio visivo. Sulla piazza si affaccia la Chiesa di Santa Maria Maddalena, principale edificio religioso del borgo, che ne rafforza il ruolo simbolico e spirituale. Funzione sociale: per secoli Piazza Vittorio Veneto e stata luogo di incontri pubblici e decisioni collettive, sede di mercati e feste, punto di riferimento per la vita quotidiana degli abitanti. Ancora oggi la piazza mantiene questa funzione: e il posto dove ci si incontra, ci si ferma a parlare, si osserva il borgo vivere con i suoi ritmi lenti e autentici. Curiosita storiche: in passato la piazza era uno dei pochi spazi sufficientemente ampi per radunare l'intera popolazione del borgo; qui venivano affissi avvisi pubblici e comunicazioni ufficiali. Durante le festivita religiose, la piazza diventava un'estensione naturale della chiesa. Storytelling: immagina Saturnia in una mattina di secoli fa. Le porte del borgo sono appena state aperte, i passi risuonano sulla pietra, qualcuno si ferma in piazza per scambiare notizie. Tutto passa da qui. La piazza non e solo uno spazio fisico, ma un punto di equilibrio, dove la vita privata incontra quella pubblica. Ancora oggi, sostare in Piazza Vittorio Veneto significa sentire il battito del borgo, osservare Saturnia nella sua dimensione piu autentica e quotidiana. Valore culturale e turistico: la piazza centrale e una tappa imprescindibile per chi visita Saturnia. Da qui si comprende l'organizzazione del borgo, si colgono i rapporti tra edifici religiosi, civili e abitativi, e si percepisce la continuita storica che lega l'epoca romana, il Medioevo e il presente. Visitare Piazza Vittorio Veneto significa entrare nel cuore vivo di Saturnia, dove la storia non e solo raccontata, ma ancora vissuta."
+                  aria-label="Piazza Vittorio Veneto"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 44%; --y: 44%;"
+                  data-id="colonna-etrusca"
+                  data-title="Colonna etrusca"
+                  data-image="assets/images/monumenti/colonna%20etrusca.jpeg"
+                  data-image-alt="Colonna etrusca di Saturnia"
+                  data-description="Una testimonianza archeologica che racconta l'antica presenza etrusca."
+                  aria-label="Colonna etrusca"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 50%; --y: 34%;"
+                  data-id="reperti-antichi"
+                  data-title="Reperti antichi"
+                  data-description="Piccoli reperti e frammenti che evocano la storia piu antica del borgo."
+                  aria-label="Reperti antichi"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 28%; --y: 41%;"
+                  data-id="muro-etrusco"
+                  data-title="Muro etrusco"
+                  data-description="Tratto di antiche mura che racconta l'epoca etrusca."
+                  data-image="assets/images/muro%20etrusco.jpg"
+                  data-image-alt="Muro etrusco di Saturnia"
+                  aria-label="Muro etrusco"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 75%; --y: 38%;"
+                  data-id="bagno-secco"
+                  data-title="Bagno secco"
+                  data-summary="Il cuore termale della Saturnia romana."
+                  data-description="Il Bagno Secco di Saturnia e uno dei luoghi archeologici piu affascinanti del borgo, perche racconta in modo diretto il rapporto millenario tra Saturnia e le acque termali, elemento fondante della sua identita fin dall'epoca romana. Origini e datazione storica: il Bagno Secco risale all'epoca romana, con una datazione compresa tra il I secolo a.C. e il I secolo d.C., periodo di massimo splendore della colonia romana di Saturnia, fondata nel 183 a.C.. Faceva parte del complesso termale urbano, oggi in gran parte scomparso, che sfruttava direttamente le sorgenti calde naturali presenti nell'area. Il nome Bagno Secco e di origine piu tarda e deriva dal fatto che, a differenza delle terme ancora attive nei dintorni, questa struttura non e piu alimentata dall'acqua, apparendo oggi come un invaso asciutto. Funzione e struttura: il Bagno Secco era probabilmente una vasca termale coperta, oppure una cisterna monumentale collegata al sistema delle terme. La struttura, realizzata in muratura romana con rivestimenti impermeabili, era destinata alla raccolta e al contenimento dell'acqua termale, utilizzata per bagni curativi, rituali di benessere e pratiche sociali tipiche della cultura romana. Per i Romani, infatti, le terme non erano solo luoghi di cura, ma anche spazi di incontro, dialogo e vita pubblica. Curiosita storiche: il Bagno Secco si trova all'interno dell'attuale perimetro del borgo, segno che la Saturnia romana era gia organizzata intorno alle acque termali. E una delle testimonianze piu evidenti del fatto che le terme di Saturnia non sono una scoperta moderna, ma una risorsa sfruttata ininterrottamente da oltre duemila anni. In epoca medievale, molte strutture romane vennero abbandonate, interrate o riutilizzate, e il Bagno Secco perse progressivamente la sua funzione originaria. Storytelling: quando l'acqua era il centro della citta. Immagina Saturnia in epoca romana. Il vapore si alza dalle vasche, l'aria profuma di zolfo. Cittadini, viaggiatori e soldati entrano nel complesso termale per curarsi, riposare e socializzare. Il Bagno Secco era parte di questo mondo: un luogo di acqua, calore e vita, oggi silenzioso, ma ancora capace di raccontare la centralita delle terme nella storia della citta. Camminare accanto alle sue rovine significa trovarsi esattamente dove scorreva l'acqua calda duemila anni fa, nel punto in cui Saturnia ha costruito la propria fama. Valore culturale attuale: oggi il Bagno Secco e un'importante testimonianza archeologica urbana, che permette di comprendere l'impianto della Saturnia romana e il suo legame indissolubile con le acque termali. E una tappa fondamentale per chi desidera andare oltre le celebri Cascate del Mulino e scoprire le origini storiche e culturali del termalismo saturnino. Visitare il Bagno Secco significa riscoprire la Saturnia romana e termale, dove l'acqua non era solo natura, ma civilta."
+                  aria-label="Bagno secco"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 38%; --y: 66%;"
+                  data-id="ritrovamenti-etruschi"
+                  data-title="Ritrovamenti etruschi"
+                  data-description="Il perimetro difensivo che ha protetto il borgo nei secoli."
+                  aria-label="Ritrovamenti etruschi"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 44%; --y: 64%;"
+                  data-id="polo-culturale-pietro-aldi"
+                  data-title="Polo Culturale Pietro Aldi"
+                  data-description="Centro culturale dedicato all'arte e alla memoria del borgo."
+                  data-image="assets/images/monumenti/Polo%20Culturale%20Pietro%20Aldi.jpg"
+                  data-image-alt="Polo Culturale Pietro Aldi"
+                  aria-label="Polo Culturale Pietro Aldi"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 67%; --y: 56%;"
+                  data-id="chiesa"
+                  data-title="Chiesa di Santa Maria Maddalena"
+                  data-summary="Principale chiesa del borgo, affacciata su Piazza Vittorio Veneto."
+                  data-image="assets/images/monumenti/saturnia_santa_maria_maddalena.jpg"
+                  data-image-alt="Chiesa di Santa Maria Maddalena"
+                  data-description="Chiesa di Santa Maria Maddalena - Saturnia. La Chiesa di Santa Maria Maddalena e il principale edificio religioso di Saturnia e rappresenta da secoli il fulcro spirituale e comunitario del borgo. Situata nel cuore del centro storico, affacciata sull'attuale Piazza Vittorio Veneto, la chiesa testimonia la profonda continuita religiosa del luogo, dalle origini pagane fino al cristianesimo medievale. Origini storiche: le origini della chiesa risalgono all'Alto Medioevo, con documenti che ne attestano l'esistenza gia intorno al XII secolo. L'edificio fu probabilmente costruito sopra strutture preesistenti di epoca romana, ipotesi rafforzata dalla presenza, nell'area circostante, di reperti e murature antiche. La dedicazione a Maria Maddalena, figura centrale del cristianesimo primitivo, e coerente con la tradizione medievale di intitolare le chiese a santi legati alla conversione e alla redenzione. Evoluzione architettonica: nel corso dei secoli la chiesa ha subito numerosi interventi di ampliamento e ristrutturazione, soprattutto tra il XIV e il XVIII secolo, assumendo l'aspetto attuale. L'esterno e caratterizzato da una facciata semplice e sobria, in linea con il contesto del borgo e con l'architettura religiosa rurale della Maremma. L'interno, a navata unica, conserva un'impostazione essenziale, arricchita da elementi decorativi e arredi sacri di epoche diverse."
+                  aria-label="Chiesa di Santa Maria Maddalena"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 78%; --y: 60%;"
+                  data-id="punto-panoramico-terme"
+                  data-title="Punto panoramico vista terme"
+                  data-description="Punto panoramico con vista sulle terme e le colline circostanti."
+                  aria-label="Punto panoramico vista terme"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 68%; --y: 75%;"
+                  data-id="porta-romana"
+                  data-title="Porta romana"
+                  data-summary="Uscita storica dal borgo, legata all'epoca romana."
+                  data-image="assets/images/monumenti/Porta%20romana.jpeg"
+                  data-image-alt="Porta romana"
+                  data-description="Tra Roma antica e Medioevo: l'ingresso senza tempo al borgo di Saturnia. La Porta Romana di Saturnia e molto piu di un semplice varco nelle mura: e un luogo simbolico che racconta oltre duemila anni di storia ininterrotta, rappresentando uno dei punti di accesso piu antichi e significativi del borgo. Origini e date storiche: le origini della porta sono legate alla Saturnia romana, fondata come colonia intorno al 183 a.C.. Gia in epoca imperiale, da questo lato della citta si sviluppava una direttrice viaria che collegava Saturnia ad altri centri strategici della Maremma e al sistema stradale romano. La struttura che vediamo oggi risale prevalentemente al Medioevo (XI-XIII secolo), periodo in cui Saturnia venne fortificata con una cinta muraria in pietra per difendersi da incursioni e conflitti territoriali. La Porta Romana fu riedificata e consolidata in questa fase, probabilmente riutilizzando basamenti e materiali di epoca romana, pratica comune nell'edilizia medievale. Architettura e funzione: la porta si presenta come un arco solido e austero, costruito in pietra locale, perfettamente integrato nelle mura difensive. La sua funzione non era solo militare: qui transitavano mercanti, pellegrini, contadini e viaggiatori, e il controllo dell'ingresso permetteva alla citta di regolare traffici e accessi. Attraversare la Porta Romana significava entrare in uno spazio protetto, regolato da leggi e consuetudini diverse rispetto all'esterno. Curiosita storiche: il nome Porta Romana non indica solo l'epoca, ma anche la direzione: da qui si usciva verso le vie di collegamento di origine romana. Secondo la tradizione locale, proprio da questo accesso sarebbero passati soldati, messaggeri e funzionari romani, diretti verso le terme e gli insediamenti agricoli circostanti. Nel Medioevo, le porte del borgo venivano chiuse al tramonto: chi arrivava in ritardo doveva attendere l'alba o trovare rifugio fuori dalle mura."
+                  aria-label="Porta romana"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 46%; --y: 48%;"
+                  data-id="saturnalia-village-rooms"
+                  data-category="hotel"
+                  data-title="Saturnalia Village Rooms"
+                  data-description="Camere nel cuore del borgo di Saturnia, in una dimora storica."
+                  aria-label="Saturnalia Village Rooms"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 66%; --y: 38%;"
+                  data-id="tellus-saturnia"
+                  data-category="hotel"
+                  data-title="Tellus Saturnia"
+                  data-description="B&amp;B nel centro di Saturnia, ambienti rilassanti e confortevoli."
+                  aria-label="Tellus Saturnia"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 88%; --y: 36%;"
+                  data-id="hotel-villa-clodia"
+                  data-category="hotel"
+                  data-title="Hotel Villa Clodia"
+                  data-description="Hotel in centro a Saturnia con area wellness e piscina all'aperto."
+                  aria-label="Hotel Villa Clodia"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 30%; --y: 40%;"
+                  data-id="dimora-dei-magi"
+                  data-category="hotel"
+                  data-title="Dimora dei Magi"
+                  data-description="Dimora nel centro storico del borgo, soggiorno in ambiente intimo."
+                  aria-label="Dimora dei Magi"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 34%; --y: 38%;"
+                  data-id="casetta-dei-mauri"
+                  data-category="hotel"
+                  data-title="Casetta dei Mauri"
+                  data-description="Casa vacanza nel borgo, ideale per un soggiorno indipendente."
+                  aria-label="Casetta dei Mauri"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 72%; --y: 50%;"
+                  data-id="camere-dei-magi"
+                  data-category="hotel"
+                  data-title="Camere dei Magi"
+                  data-description="Camere accoglienti nel centro storico, a pochi passi dalla piazza."
+                  aria-label="Camere dei Magi"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 58%; --y: 50%;"
+                  data-id="bar-centrale"
+                  data-category="bar"
+                  data-title="Bar centrale"
+                  data-summary="Bar in piazza, punto di sosta nel cuore del borgo."
+                  data-description="Il bar centrale e il punto d'incontro in Piazza Vittorio Veneto, ideale per una pausa nel cuore del borgo."
+                  aria-label="Bar centrale"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 56%; --y: 36%;"
+                  data-id="bar-di-luisa"
+                  data-category="bar"
+                  data-title="Bar di Luisa"
+                  data-summary="Bar raccolto a due passi dal centro storico."
+                  data-description="Il Bar di Luisa si trova in posizione piu alta rispetto alla piazza, con atmosfera accogliente."
+                  aria-label="Bar di Luisa"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 40%; --y: 44%;"
+                  data-id="alimentari-1"
+                  data-category="alimentari"
+                  data-title="Alimentari"
+                  data-summary="Alimentari."
+                  data-description="Alimentari."
+                  aria-label="Alimentari"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 69%; --y: 48%;"
+                  data-id="alimentari-2"
+                  data-category="alimentari"
+                  data-title="Alimentari"
+                  data-summary="Alimentari."
+                  data-description="Alimentari."
+                  aria-label="Alimentari"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 27%; --y: 49%;"
+                  data-id="macelleria-passalacqua"
+                  data-category="alimentari"
+                  data-title="Macelleria Passalacqua"
+                  data-summary="Macelleria e alimentari nel borgo."
+                  data-description="Macelleria Passalacqua: bottega di carni e prodotti locali nel centro del borgo."
+                  aria-label="Macelleria Passalacqua"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 56%; --y: 46%;"
+                  data-id="ristorante-i-due-cippi"
+                  data-category="ristoranti"
+                  data-title="Ristorante I Due Cippi"
+                  data-description="Piazza Vittorio Veneto 26/A, cucina della tradizione maremmana."
+                  aria-label="Ristorante I Due Cippi"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 50%; --y: 44%;"
+                  data-id="pizza-in-piazza"
+                  data-category="ristoranti"
+                  data-title="L'Oste in Piazza"
+                  data-description="Piazza Vittorio Veneto 5, pizzeria nel centro storico."
+                  aria-label="L'Oste in Piazza"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 58%; --y: 52%;"
+                  data-id="ristorante-da-mario"
+                  data-category="ristoranti"
+                  data-title="Ristorante Da Mario"
+                  data-description="Via Giuseppe Mazzini 18, cucina tipica toscana."
+                  aria-label="Ristorante Da Mario"
+                ></button>
+                <button
+                  class="map-pin"
+                  type="button"
+                  style="--x: 58%; --y: 48%;"
+                  data-id="bacco-cerere-2-0"
+                  data-category="ristoranti"
+                  data-title="Bacco &amp; Cerere 2.0"
+                  data-description="Via Giuseppe Mazzini 4, cucina locale e vini del territorio."
+                  aria-label="Bacco &amp; Cerere 2.0"
+                ></button>
+                </div>
+              </div>
+            </div>
+          </figure>
+        </section>
+        <section class="monument-section" id="monumenti">
+        <div class="monument-header">
+          <p class="eyebrow">Monumenti</p>
+          <h2 class="monument-title">Monumenti</h2>
+          <p class="monument-intro">
+            Brevi racconti per orientarti nel borgo e scoprire le sue tappe piu
+            iconiche.
+          </p>
+        </div>
+        <div class="monument-modal" id="monumento-modal" hidden>
+          <div
+            class="monument-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="monument-detail-title"
+          >
+            <button
+              class="monument-modal-close"
+              type="button"
+              id="monument-modal-close"
+              aria-label="Chiudi scheda"
+            >
+              Chiudi
+            </button>
+            <div class="monument-detail" id="monumento-dettaglio">
+              <p class="monument-detail-eyebrow">Dettaglio monumento</p>
+              <h3 class="monument-detail-title" id="monument-detail-title">
+                Seleziona un punto per leggere la descrizione completa.
+              </h3>
+              <img
+                class="monument-detail-image"
+                id="monument-detail-image"
+                alt=""
+                hidden
+              />
+              <p
+                class="monument-detail-text"
+                id="monument-detail-text"
+                aria-live="polite"
+              ></p>
+              <button
+                class="monument-audio-button"
+                type="button"
+                id="monument-audio-button"
+                aria-pressed="false"
+              >
+                Audiodescrizione
+              </button>
+              <p class="monument-audio-status" id="monument-audio-status" role="status"></p>
+            </div>
+          </div>
+        </div>
+        <div class="monument-grid">
+          <article
+            class="monument-card has-photo"
+            style="--card-image: url('assets/images/monumenti/castellodisaturnia.jpg');"
+          >
+            <h3>Castello di Saturnia</h3>
+            <p>
+              Rocca Aldobrandesca e cuore militare del borgo, con vista sulle
+              colline maremmane.
+            </p>
+            <button class="monument-link" type="button" data-target="castello">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article
+            class="monument-card has-photo"
+            style="--card-image: url('assets/images/monumenti/Piazza%20Vittorio%20Veneto.jpg');"
+          >
+            <h3>Piazza Vittorio Veneto</h3>
+            <p>
+              Il salotto a cielo aperto del borgo, tra storia, vita quotidiana e
+              celebrazioni locali.
+            </p>
+            <button class="monument-link" type="button" data-target="piazza-centrale">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article
+            class="monument-card has-photo"
+            style="--card-image: url('assets/images/muro%20etrusco.jpg');"
+          >
+            <h3>Muro etrusco</h3>
+            <p>
+              Tratto di mura antiche: difesa e memoria, incastonato nel tessuto
+              del borgo.
+            </p>
+            <button class="monument-link" type="button" data-target="muro-etrusco">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article
+            class="monument-card has-photo"
+            style="--card-image: url('assets/images/monumenti/saturnia_santa_maria_maddalena.jpg');"
+          >
+            <h3>Chiesa di Santa Maria Maddalena</h3>
+            <p>
+              Edificio religioso principale del borgo, affacciato su Piazza
+              Vittorio Veneto e legato alla storia medievale di Saturnia.
+            </p>
+            <button class="monument-link" type="button" data-target="chiesa">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article
+            class="monument-card has-photo"
+            style="--card-image: url('assets/images/monumenti/Porta%20romana.jpeg');"
+          >
+            <h3>Porta romana</h3>
+            <p>
+              Storico varco del borgo, memoria dei percorsi che collegavano
+              Saturnia al territorio romano.
+            </p>
+            <button class="monument-link" type="button" data-target="porta-romana">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article
+            class="monument-card has-photo"
+            style="--card-image: url('assets/images/monumenti/colonna%20etrusca.jpeg');"
+          >
+            <h3>Colonna etrusca</h3>
+            <p>
+              Una testimonianza archeologica che richiama la Saturnia etrusca e
+              racconta le sue origini piu antiche.
+            </p>
+            <button class="monument-link" type="button" data-target="colonna-etrusca">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article class="monument-card">
+            <h3>Bagno secco</h3>
+            <p>
+              Luogo legato alla tradizione termale, che ricorda l'importanza
+              storica delle acque di Saturnia.
+            </p>
+            <button class="monument-link" type="button" data-target="bagno-secco">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article class="monument-card">
+            <h3>Ritrovamenti etruschi</h3>
+            <p>
+              Area che testimonia secoli di insediamenti, simbolo della lunga
+              continuita storica del borgo.
+            </p>
+            <button class="monument-link" type="button" data-target="ritrovamenti-etruschi">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article
+            class="monument-card has-photo"
+            style="--card-image: url('assets/images/monumenti/Polo%20Culturale%20Pietro%20Aldi.jpg');"
+          >
+            <h3>Polo Culturale Pietro Aldi</h3>
+            <p>
+              Spazio dedicato alla memoria artistica del territorio, con
+              esposizioni e iniziative culturali.
+            </p>
+            <button class="monument-link" type="button" data-target="polo-culturale-pietro-aldi">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article class="monument-card">
+            <h3>Reperti antichi</h3>
+            <p>
+              Piccoli reperti e frammenti che evocano la storia piu antica del borgo.
+            </p>
+            <button class="monument-link" type="button" data-target="reperti-antichi">
+              Apri sulla mappa
+            </button>
+          </article>
+          <article class="monument-card">
+            <h3>Punto panoramico vista terme</h3>
+            <p>
+              Un belvedere naturale da cui ammirare le vapori delle terme e il
+              paesaggio circostante.
+            </p>
+            <button class="monument-link" type="button" data-target="punto-panoramico-terme">
+              Apri sulla mappa
+            </button>
+          </article>
+</div>
+        </section>
+      </div>
+    </main>
+    <script>
+      const map = document.querySelector(".map");
+      const buttons = document.querySelectorAll(".view-toggle");
+      const pins = document.querySelectorAll(".map-pin");
+      const listItems = document.querySelectorAll(".map-item");
+      const monumentLinks = document.querySelectorAll(".monument-link");
+      const pinById = new Map(
+        Array.from(pins, (pin) => [pin.dataset.id, pin])
+      );
+      const mapSection = document.querySelector(".map-section");
+      const borgoLayout = document.querySelector(".borgo-layout");
+      const hotelToggle = document.querySelector(
+        '.filter-toggle[data-filter="hotel"]'
+      );
+      const restaurantToggle = document.querySelector(
+        '.filter-toggle[data-filter="ristoranti"]'
+      );
+      const barToggle = document.querySelector(
+        '.filter-toggle[data-filter="bar"]'
+      );
+      const alimentariToggle = document.querySelector(
+        '.filter-toggle[data-filter="alimentari"]'
+      );
+      const restaurantPins = document.querySelectorAll(
+        '.map-pin[data-category="ristoranti"]'
+      );
+      const restaurantStorageKey = "saturnia-restaurant-pins";
+      const contestForm = document.querySelector("#contest-form");
+      const contestName = document.querySelector("#contest-name");
+      const contestEmail = document.querySelector("#contest-email");
+      const contestStatus = document.querySelector("#contest-status");
+      const contestSelected = document.querySelector("#contest-selected");
+      const contestFile = document.querySelector("#contest-file");
+      const contestFeedback = document.querySelector("#contest-feedback");
+      const contestProgressFill = document.querySelector("#contest-progress-fill");
+      const contestCount = document.querySelector("#contest-count");
+      const contestTotal = document.querySelector("#contest-total");
+      const contestReward = document.querySelector("#contest-reward");
+      const monumentModal = document.querySelector("#monumento-modal");
+      const monumentModalClose = document.querySelector("#monument-modal-close");
+      const monumentDetail = document.querySelector("#monumento-dettaglio");
+      const monumentDetailTitle = document.querySelector("#monument-detail-title");
+      const monumentDetailText = document.querySelector("#monument-detail-text");
+      const monumentDetailImage = document.querySelector("#monument-detail-image");
+      const monumentAudioButton = document.querySelector("#monument-audio-button");
+      const monumentAudioStatus = document.querySelector("#monument-audio-status");
+      const contestUserKey = "saturnia-contest-user";
+      const contestPhotosKey = "saturnia-contest-photos";
+      const excludedMonumentId = "polo-culturale-pietro-aldi";
+      const monumentPins = Array.from(pins).filter(
+        (pin) => !pin.dataset.category
+      );
+      const requiredMonumentIds = monumentPins
+        .map((pin) => pin.dataset.id)
+        .filter((id) => id !== excludedMonumentId);
+      let selectedMonumentId = null;
+      let currentMonumentText = "";
+      let speechUtterance = null;
+
+      const clearActivePins = () => {
+        pins.forEach((item) => {
+          item.classList.remove("is-active");
+          item.setAttribute("aria-pressed", "false");
+        });
+        listItems.forEach((item) => {
+          item.classList.remove("is-active");
+          item.setAttribute("aria-pressed", "false");
+        });
+      };
+
+      const setHotelFilter = (enabled) => {
+        map.classList.toggle("show-hotels", enabled);
+        if (hotelToggle) {
+          hotelToggle.classList.toggle("is-active", enabled);
+          hotelToggle.setAttribute("aria-pressed", String(enabled));
+        }
+        if (!enabled) {
+          const activeHotel = document.querySelector(
+            '.map-pin.is-active[data-category="hotel"]'
+          );
+          if (activeHotel) {
+            clearActivePins();
+          }
+        }
+      };
+
+      const setRestaurantFilter = (enabled) => {
+        map.classList.toggle("show-ristoranti", enabled);
+        if (restaurantToggle) {
+          restaurantToggle.classList.toggle("is-active", enabled);
+          restaurantToggle.setAttribute("aria-pressed", String(enabled));
+        }
+        if (!enabled) {
+          const activeRestaurant = document.querySelector(
+            '.map-pin.is-active[data-category="ristoranti"]'
+          );
+          if (activeRestaurant) {
+            clearActivePins();
+          }
+        }
+      };
+
+      const setBarFilter = (enabled) => {
+        map.classList.toggle("show-bars", enabled);
+        if (barToggle) {
+          barToggle.classList.toggle("is-active", enabled);
+          barToggle.setAttribute("aria-pressed", String(enabled));
+        }
+        if (!enabled) {
+          const activeBar = document.querySelector(
+            '.map-pin.is-active[data-category="bar"]'
+          );
+          if (activeBar) {
+            clearActivePins();
+          }
+        }
+      };
+
+      const setAlimentariFilter = (enabled) => {
+        map.classList.toggle("show-alimentari", enabled);
+        if (alimentariToggle) {
+          alimentariToggle.classList.toggle("is-active", enabled);
+          alimentariToggle.setAttribute("aria-pressed", String(enabled));
+        }
+        if (!enabled) {
+          const activeAlimentari = document.querySelector(
+            '.map-pin.is-active[data-category="alimentari"]'
+          );
+          if (activeAlimentari) {
+            clearActivePins();
+          }
+        }
+      };
+
+      const loadRestaurantPositions = () => {
+        if (!restaurantPins.length) return;
+        try {
+          const saved = JSON.parse(localStorage.getItem(restaurantStorageKey) || "{}");
+          restaurantPins.forEach((pin) => {
+            const position = saved[pin.dataset.id];
+            if (!position) return;
+            pin.style.setProperty("--x", `${position.x}%`);
+            pin.style.setProperty("--y", `${position.y}%`);
+          });
+        } catch (error) {
+          console.warn("Impossibile caricare le posizioni dei ristoranti.", error);
+        }
+      };
+
+      const getContestPhotos = () => {
+        try {
+          return JSON.parse(localStorage.getItem(contestPhotosKey) || "{}");
+        } catch (error) {
+          console.warn("Impossibile leggere le foto del contest.", error);
+          return {};
+        }
+      };
+
+      const saveContestPhotos = (data) => {
+        try {
+          localStorage.setItem(contestPhotosKey, JSON.stringify(data));
+        } catch (error) {
+          console.warn("Impossibile salvare le foto del contest.", error);
+        }
+      };
+
+      const updateContestProgress = () => {
+        if (!contestProgressFill || !contestCount || !contestTotal) return;
+        const saved = getContestPhotos();
+        const completed = requiredMonumentIds.filter((id) => saved[id]);
+        const total = requiredMonumentIds.length;
+        const percent = total ? (completed.length / total) * 100 : 0;
+        contestProgressFill.style.width = `${percent}%`;
+        contestCount.textContent = String(completed.length);
+        contestTotal.textContent = String(total);
+        if (contestReward) {
+          contestReward.hidden = completed.length !== total;
+        }
+      };
+
+      const setContestSelection = (pin) => {
+        if (!contestSelected || !contestFile) return;
+        if (pin.dataset.category) return;
+        selectedMonumentId = pin.dataset.id;
+        contestSelected.textContent = `Monumento selezionato: ${pin.dataset.title}.`;
+        contestFile.disabled = false;
+      };
+
+
+      const initializeContestForm = () => {
+        if (!contestForm || !contestName || !contestEmail) return;
+        try {
+          const saved = JSON.parse(localStorage.getItem(contestUserKey) || "{}");
+          if (saved.name) contestName.value = saved.name;
+          if (saved.email) contestEmail.value = saved.email;
+          if (saved.name || saved.email) {
+            contestStatus.textContent = "Registrazione salvata.";
+          }
+        } catch (error) {
+          console.warn("Impossibile leggere la registrazione del contest.", error);
+        }
+      };
+
+      const syncBorgoLayoutHeight = () => {
+        if (!borgoLayout || !mapSection) return;
+        const height = mapSection.getBoundingClientRect().height;
+        if (!height) return;
+        borgoLayout.style.setProperty("--borgo-map-height", `${Math.round(height)}px`);
+      };
+
+      const setView = (view) => {
+        map.dataset.view = view;
+        buttons.forEach((button) => {
+          const isActive = button.dataset.view === view;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+        syncBorgoLayoutHeight();
+      };
+
+      const setPin = (pin, forceOpen = false) => {
+        if (!pin) return;
+        const isSame = pin.classList.contains("is-active");
+        const shouldActivate = forceOpen ? true : !isSame;
+        pins.forEach((item) => {
+          const isActive = shouldActivate && item === pin;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+        listItems.forEach((item) => {
+          const isActive = shouldActivate && item.dataset.target === pin.dataset.id;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+        if (shouldActivate) {
+          setContestSelection(pin);
+        }
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => setView(button.dataset.view));
+      });
+
+      const showMonumentDetail = (pin) => {
+        if (!monumentDetail || !monumentModal || !pin) return;
+        const title = pin.dataset.title || "Dettaglio monumento";
+        const text = pin.dataset.description || "";
+        currentMonumentText = text;
+        if (monumentDetailTitle) {
+          monumentDetailTitle.textContent = title;
+        }
+        if (monumentDetailText) {
+          monumentDetailText.textContent = text;
+        }
+        if (monumentDetailImage) {
+          if (pin.dataset.image) {
+            monumentDetailImage.src = pin.dataset.image;
+            monumentDetailImage.alt =
+              pin.dataset.imageAlt || pin.dataset.title || "Immagine del borgo";
+            monumentDetailImage.hidden = false;
+          } else {
+            monumentDetailImage.hidden = true;
+            monumentDetailImage.removeAttribute("src");
+            monumentDetailImage.alt = "";
+          }
+        }
+        monumentModal.hidden = false;
+        monumentModal.removeAttribute("hidden");
+        document.body.classList.add("modal-open");
+        if (monumentAudioButton) {
+          monumentAudioButton.disabled = !text;
+          monumentAudioButton.textContent = "Audiodescrizione";
+          monumentAudioButton.setAttribute("aria-pressed", "false");
+        }
+        if (monumentAudioStatus) {
+          monumentAudioStatus.textContent = "";
+        }
+        if (monumentModalClose) {
+          monumentModalClose.focus();
+        }
+      };
+
+      const stopMonumentAudio = () => {
+        if (!("speechSynthesis" in window)) return;
+        if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+          window.speechSynthesis.cancel();
+        }
+        if (monumentAudioButton) {
+          monumentAudioButton.textContent = "Audiodescrizione";
+          monumentAudioButton.setAttribute("aria-pressed", "false");
+        }
+      };
+
+      const playMonumentAudio = (text) => {
+        if (!("speechSynthesis" in window)) {
+          if (monumentAudioStatus) {
+            monumentAudioStatus.textContent =
+              "Sintesi vocale non disponibile in questo browser.";
+          }
+          return;
+        }
+        if (!text) return;
+        stopMonumentAudio();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = "it-IT";
+        utterance.rate = 1;
+        utterance.onend = () => {
+          if (monumentAudioButton) {
+            monumentAudioButton.textContent = "Audiodescrizione";
+            monumentAudioButton.setAttribute("aria-pressed", "false");
+          }
+          if (monumentAudioStatus) {
+            monumentAudioStatus.textContent = "";
+          }
+        };
+        utterance.onerror = () => {
+          if (monumentAudioStatus) {
+            monumentAudioStatus.textContent = "Errore nella riproduzione audio.";
+          }
+        };
+        speechUtterance = utterance;
+        if (monumentAudioButton) {
+          monumentAudioButton.textContent = "Ferma audio";
+          monumentAudioButton.setAttribute("aria-pressed", "true");
+        }
+        if (monumentAudioStatus) {
+          monumentAudioStatus.textContent = "Audio in riproduzione.";
+        }
+        window.speechSynthesis.speak(utterance);
+      };
+
+      const closeMonumentDetail = () => {
+        if (!monumentModal) return;
+        stopMonumentAudio();
+        monumentModal.hidden = true;
+        monumentModal.setAttribute("hidden", "");
+        document.body.classList.remove("modal-open");
+      };
+
+      pins.forEach((pin) => {
+        const tooltip = document.createElement("span");
+        tooltip.className = "pin-tooltip";
+        tooltip.setAttribute("role", "tooltip");
+
+        const createSummary = (text) => {
+          if (!text) return "";
+          const firstSentence = text.split(". ").shift();
+          if (firstSentence && firstSentence.length <= 90) {
+            return firstSentence.endsWith(".") ? firstSentence : `${firstSentence}.`;
+          }
+          if (text.length <= 90) return text;
+          return `${text.slice(0, 90).trim()}...`;
+        };
+
+        const title = document.createElement("span");
+        title.className = "pin-title";
+        title.textContent = pin.dataset.title;
+        tooltip.appendChild(title);
+
+        const imageSrc = pin.dataset.image;
+        if (imageSrc) {
+          const image = document.createElement("img");
+          image.className = "pin-image";
+          image.src = imageSrc;
+          image.alt = pin.dataset.imageAlt || pin.dataset.title || "Immagine del borgo";
+          image.loading = "lazy";
+          tooltip.appendChild(image);
+        }
+
+        const summaryText = pin.dataset.summary || createSummary(pin.dataset.description);
+        if (summaryText) {
+          const summary = document.createElement("span");
+          summary.className = "pin-summary";
+          summary.textContent = summaryText;
+          tooltip.appendChild(summary);
+        }
+
+        const infoButton = document.createElement("span");
+        infoButton.className = "pin-info-button";
+        infoButton.textContent = "Info";
+        infoButton.setAttribute("role", "button");
+        infoButton.setAttribute("tabindex", "0");
+
+        infoButton.addEventListener("click", (event) => {
+          event.stopPropagation();
+          showMonumentDetail(pin);
+        });
+
+        infoButton.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          event.stopPropagation();
+          showMonumentDetail(pin);
+        });
+
+        tooltip.append(infoButton);
+        pin.appendChild(tooltip);
+      });
+
+      pins.forEach((pin) => {
+        pin.addEventListener("click", () => {
+          setPin(pin);
+        });
+      });
+
+      listItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const targetPin = pinById.get(item.dataset.target);
+          if (targetPin) {
+            const listCategory = item.closest("li")?.dataset.category;
+            if (listCategory === "hotel") {
+              setHotelFilter(true);
+            }
+            if (listCategory === "ristoranti") {
+              setRestaurantFilter(true);
+            }
+            if (listCategory === "bar") {
+              setBarFilter(true);
+            }
+            if (listCategory === "alimentari") {
+              setAlimentariFilter(true);
+            }
+            setPin(targetPin, true);
+            targetPin.focus({ preventScroll: true });
+          }
+        });
+      });
+
+      monumentLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const targetPin = pinById.get(link.dataset.target);
+          if (targetPin) {
+            setPin(targetPin, true);
+            if (mapSection) {
+              const prefersReduced =
+                window.matchMedia &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+              mapSection.scrollIntoView({
+                behavior: prefersReduced ? "auto" : "smooth",
+                block: "center",
+              });
+            }
+            targetPin.focus({ preventScroll: true });
+          }
+        });
+      });
+
+      if (hotelToggle) {
+        hotelToggle.addEventListener("click", () => {
+          const enabled = !map.classList.contains("show-hotels");
+          setHotelFilter(enabled);
+        });
+      }
+
+      if (restaurantToggle) {
+        restaurantToggle.addEventListener("click", () => {
+          const enabled = !map.classList.contains("show-ristoranti");
+          setRestaurantFilter(enabled);
+        });
+      }
+
+      if (barToggle) {
+        barToggle.addEventListener("click", () => {
+          const enabled = !map.classList.contains("show-bars");
+          setBarFilter(enabled);
+        });
+      }
+
+      if (alimentariToggle) {
+        alimentariToggle.addEventListener("click", () => {
+          const enabled = !map.classList.contains("show-alimentari");
+          setAlimentariFilter(enabled);
+        });
+      }
+
+      if (monumentModalClose) {
+        monumentModalClose.addEventListener("click", (event) => {
+          event.preventDefault();
+          closeMonumentDetail();
+        });
+      }
+
+      if (monumentModal) {
+        monumentModal.addEventListener("click", (event) => {
+          if (event.target === monumentModal) {
+            closeMonumentDetail();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && monumentModal && !monumentModal.hidden) {
+          closeMonumentDetail();
+        }
+      });
+
+      if (monumentAudioButton) {
+        monumentAudioButton.addEventListener("click", () => {
+          const isPlaying = monumentAudioButton.getAttribute("aria-pressed") === "true";
+          if (isPlaying) {
+            stopMonumentAudio();
+          } else {
+            playMonumentAudio(currentMonumentText);
+          }
+        });
+      }
+
+      if (contestForm) {
+        contestForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const payload = {
+            name: contestName.value.trim(),
+            email: contestEmail.value.trim(),
+          };
+          if (!payload.name || !payload.email) {
+            contestStatus.textContent = "Inserisci nome ed email.";
+            return;
+          }
+          try {
+            localStorage.setItem(contestUserKey, JSON.stringify(payload));
+            contestStatus.textContent = "Registrazione salvata.";
+          } catch (error) {
+            console.warn("Impossibile salvare la registrazione.", error);
+            contestStatus.textContent = "Registrazione non salvata.";
+          }
+        });
+      }
+
+      if (contestFile) {
+        contestFile.addEventListener("change", (event) => {
+          const file = event.target.files?.[0];
+          if (!selectedMonumentId) {
+            contestFeedback.textContent =
+              "Seleziona un monumento prima di caricare la foto.";
+            event.target.value = "";
+            return;
+          }
+          if (!file) return;
+          const saved = getContestPhotos();
+          saved[selectedMonumentId] = {
+            name: file.name,
+            updated: Date.now(),
+          };
+          saveContestPhotos(saved);
+          contestFeedback.textContent = `Foto salvata per ${pinById.get(selectedMonumentId)?.dataset.title || "il monumento"}.`;
+          event.target.value = "";
+          updateContestProgress();
+        });
+      }
+
+      window.addEventListener("load", syncBorgoLayoutHeight);
+      window.addEventListener("resize", syncBorgoLayoutHeight);
+
+      loadRestaurantPositions();
+      initializeContestForm();
+      updateContestProgress();
+      clearActivePins();
+      syncBorgoLayoutHeight();
+    </script>
+    <script>
+      const visitorArrivi = document.getElementById("visitor-arrivi");
+      const visitorPresenze = document.getElementById("visitor-presenze");
+      const visitorYear = document.getElementById("visitor-year");
+
+      const formatNumber = (value) =>
+        new Intl.NumberFormat("it-IT").format(Math.round(value));
+
+      const extractLatestObservation = (payload) => {
+        const dataset = payload?.data?.dataSets?.[0];
+        const series = dataset?.series;
+        const seriesKey = series ? Object.keys(series)[0] : null;
+        const observations = seriesKey ? series[seriesKey]?.observations : null;
+        const timeValues =
+          payload?.data?.structure?.dimensions?.observation?.[0]?.values || [];
+
+        if (!observations || !timeValues.length) {
+          return null;
+        }
+
+        let latest = null;
+        Object.keys(observations).forEach((key) => {
+          const idx = Number(key);
+          const value = observations[key]?.[0];
+          const time = timeValues[idx]?.id;
+          if (value == null || !time) {
+            return;
+          }
+          if (!latest || time > latest.time) {
+            latest = { time, value };
+          }
+        });
+
+        return latest;
+      };
+
+      const loadVisitorData = async () => {
+        try {
+          const response = await fetch("data/istat-grosseto.json");
+          if (!response.ok) {
+            throw new Error("Local data not found");
+          }
+          const data = await response.json();
+          if (!data || data.arrivi == null || data.presenze == null) {
+            throw new Error("Invalid data");
+          }
+          visitorArrivi.textContent = formatNumber(data.arrivi);
+          visitorPresenze.textContent = formatNumber(data.presenze);
+          visitorYear.textContent = `Anno: ${data.anno}`;
+        } catch (error) {
+          if (visitorYear) {
+            visitorYear.textContent = "Dati non disponibili al momento.";
+          }
+        }
+      };
+
+      loadVisitorData();
+
+      const visitorWidget = document.getElementById("visitor-widget");
+      const visitorClose = document.querySelector(".visitor-close");
+      const visitorWidgetState = "visitor-widget-collapsed";
+      if (visitorWidget && window.localStorage) {
+        const isCollapsed = window.localStorage.getItem(visitorWidgetState) === "1";
+        if (isCollapsed) {
+          visitorWidget.classList.add("is-collapsed");
+        }
+      }
+      if (visitorClose && visitorWidget) {
+        visitorClose.addEventListener("click", (event) => {
+          event.stopPropagation();
+          visitorWidget.classList.toggle("is-collapsed");
+          if (window.localStorage) {
+            window.localStorage.setItem(visitorWidgetState, visitorWidget.classList.contains("is-collapsed") ? "1" : "0");
+          }
+        });
+      }
+
+      if (visitorWidget) {
+        visitorWidget.addEventListener("click", () => {
+          if (visitorWidget.classList.contains("is-collapsed")) {
+            visitorWidget.classList.remove("is-collapsed");
+            if (window.localStorage) {
+              window.localStorage.setItem(visitorWidgetState, "0");
+            }
+          }
+        });
+      }
+    </script>
+    <script src="weather-widget.js?v=20260201"></script>
+  </body>
+</html>

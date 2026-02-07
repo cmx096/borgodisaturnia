@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dove mangiare - Borgo di Saturnia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260201" />
+  </head>
+  <body>
+    <div
+      class="global-weather"
+      data-thermal="37.5"
+    >
+      <span class="global-weather-label">Meteo Saturnia</span>
+      <span class="global-weather-value" aria-live="polite">Caricamento...</span>
+      <div class="global-weather-row">
+        <span class="global-weather-thermal"></span>
+        <button class="global-weather-toggle" type="button" aria-label="Apri meteo settimanale">
+          <svg class="global-weather-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="global-weather-close"
+        type="button"
+        aria-label="Chiudi meteo"
+      >
+        X <span class="weather-close-text">Chiudi</span>
+      </button>
+      <div class="global-weather-weekly" id="global-weather-weekly" hidden>
+        <p class="global-weather-weekly-title">Prossimi 7 giorni</p>
+        <p class="global-weather-weekly-status">Caricamento...</p>
+        <ul class="global-weather-weekly-list"></ul>
+      </div>
+    </div>
+    <div class="visitor-widget" id="visitor-widget" aria-live="polite">
+      <span class="visitor-eyebrow">Stima visitatori</span>
+      <p class="visitor-title">Provincia di Grosseto</p>
+      <div class="visitor-grid">
+        <div class="visitor-stat">
+          <span class="visitor-label">Arrivi</span>
+          <span class="visitor-value" id="visitor-arrivi">-</span>
+        </div>
+        <div class="visitor-stat">
+          <span class="visitor-label">Presenze</span>
+          <span class="visitor-value" id="visitor-presenze">-</span>
+        </div>
+      </div>
+      <p class="visitor-meta" id="visitor-year">Anno: -</p>
+      <button class="visitor-close" type="button" aria-label="Chiudi stima visitatori">X <span class="visitor-close-text">Chiudi</span></button>
+      <p class="visitor-source">
+        Fonte: ISTAT, movimento clienti negli esercizi ricettivi (annuale).
+      </p>
+    </div>
+    <main class="page">
+      <nav class="site-nav" aria-label="Menu principale">
+        <a class="nav-tab" href="index.html">Borgo</a>
+        <a class="nav-tab" href="galleria.html">Galleria</a>
+        <a class="nav-tab is-active" href="dove-mangiare.html" aria-current="page">
+          <span class="nav-label-full">Mangiare</span>
+          <span class="nav-label-short">Mangiare</span>
+        </a>
+        <a class="nav-tab" href="dove-dormire.html">
+          <span class="nav-label-full">Dormire</span>
+          <span class="nav-label-short">Dormire</span>
+        </a>
+        <details class="nav-dropdown">
+          <summary class="nav-tab">
+            <span class="nav-label-full">Cosa fare</span>
+            <span class="nav-label-short">Cosa fare</span>
+          </summary>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="cosa-fare.html#cavallo">Cavallo</a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#degustazioni">
+              Degustazioni
+            </a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#golf">Golf</a>
+          </div>
+        </details>
+        <a class="nav-tab" href="eventi.html">Eventi</a>
+        <a class="nav-tab" href="nelle-vicinanze.html">
+          <span class="nav-label-full">Nelle vicinanze</span>
+          <span class="nav-label-short">Vicinanze</span>
+        </a>
+      </nav>
+      <header class="hero">
+        <p class="eyebrow">Borgo di Saturnia</p>
+        <h1>Dove mangiare</h1>
+        <p class="subtitle">
+          Indirizzi utili per assaporare la cucina del borgo.
+        </p>
+      </header>
+      <section class="food-section" id="dove-mangiare">
+        <div class="food-layout">
+          <div class="food-card">
+            <p class="eyebrow">Dove mangiare a Saturnia</p>
+            <details class="food-group">
+              <summary class="food-group-title">
+                <span class="food-title">Ristoranti e trattorie</span>
+              </summary>
+              <div class="food-group-body">
+                <ul class="food-list">
+            <li class="food-item">
+              <div class="food-block food-block-main">
+                <div class="food-header">
+                  <a
+                    class="logo-link"
+                    href="assets/images/logo/iduecippi.png"
+                    aria-label="Apri logo Ristorante I Due Cippi"
+                  >
+                    <img
+                      class="food-logo"
+                      src="assets/images/logo/iduecippi.png"
+                      alt="Logo Ristorante I Due Cippi"
+                      loading="lazy"
+                    />
+                  </a>
+                  <button
+                    class="food-link food-name"
+                    type="button"
+                    data-target="ristorante-i-due-cippi"
+                    aria-pressed="false"
+                  >
+                    RISTORANTE I DUE CIPPI
+                  </button>
+                </div>
+                <span class="food-address">Piazza Vittorio Veneto 26/A, Saturnia</span>
+                <span class="food-meta">
+                  Tel. <a href="tel:+390564601074">0564601074</a>
+                </span>
+              </div>
+              <div class="food-block food-block-extra">
+                <span class="food-meta">Giorno di riposo: Martedi</span>
+                <span class="food-meta">
+                  Instagram:
+                  <a
+                    href="https://www.instagram.com/iduecippi/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    instagram.com/iduecippi
+                  </a>
+                </span>
+                <span class="food-meta">
+                  Sito:
+                  <a href="https://www.iduecippi.com/" target="_blank" rel="noopener">
+                    iduecippi.com
+                  </a>
+                </span>
+              </div>
+            </li>
+            <li class="food-item">
+              <div class="food-block food-block-main">
+                <div class="food-header">
+                  <a
+                    class="logo-link"
+                    href="assets/images/logo/oste%20in%20piazza.jpg"
+                    aria-label="Apri logo L'Oste in Piazza"
+                  >
+                    <img
+                      class="food-logo"
+                      src="assets/images/logo/oste%20in%20piazza.jpg"
+                      alt="Logo L'Oste in Piazza"
+                      loading="lazy"
+                    />
+                  </a>
+                  <button
+                    class="food-link food-name"
+                    type="button"
+                    data-target="oste-in-piazza"
+                    aria-pressed="false"
+                  >
+                    L'OSTE IN PIAZZA
+                  </button>
+                </div>
+                <span class="food-address">Piazza Vittorio Veneto 5, Saturnia</span>
+                <span class="food-meta">
+                  Tel. <a href="tel:+390564601095">0564601095</a>
+                </span>
+              </div>
+              <div class="food-block food-block-extra">
+                <span class="food-meta">
+                  Instagram:
+                  <a
+                    href="https://www.instagram.com/osteinpiazzasaturnia/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    instagram.com/osteinpiazzasaturnia
+                  </a>
+                </span>
+                <span class="food-meta">
+                  Sito:
+                  <a
+                    href="https://losteinpiazza.hboyzsolutions.it/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    losteinpiazza.hboyzsolutions.it
+                  </a>
+                </span>
+              </div>
+            </li>
+            <li class="food-item">
+              <div class="food-block food-block-main">
+                <div class="food-header">
+                  <button
+                    class="food-link food-name"
+                    type="button"
+                    data-target="saturnalia-rooms"
+                    aria-pressed="false"
+                  >
+                    SATURNALIA
+                  </button>
+                </div>
+                <span class="food-address">Piazza Vittorio Veneto 31, Saturnia</span>
+                <span class="food-meta">
+                  Tel. <a href="tel:+393519641172">+39 351 964 1172</a>
+                </span>
+              </div>
+              <div class="food-block food-block-extra">
+                <span class="food-meta">
+                  Instagram:
+                  <a
+                    href="https://www.instagram.com/saturnalia_lamaliosa/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    instagram.com/saturnalia_lamaliosa
+                  </a>
+                </span>
+                <span class="food-meta">
+                  Sito:
+                  <a
+                    href="https://www.saturnalialamaliosa.it/saturnalia-rooms/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    saturnalialamaliosa.it/saturnalia-rooms
+                  </a>
+                </span>
+              </div>
+            </li>
+            <li class="food-item">
+              <div class="food-block food-block-main">
+                <div class="food-header">
+                  <button
+                    class="food-link food-name"
+                    type="button"
+                    data-target="ristorante-da-mario"
+                    aria-pressed="false"
+                  >
+                    RISTORANTE DA MARIO
+                  </button>
+                </div>
+                <span class="food-address">Via Giuseppe Mazzini 18, Saturnia</span>
+                <span class="food-meta">
+                  Tel. <a href="tel:+390564601309">0564601309</a>
+                </span>
+              </div>
+              <div class="food-block food-block-extra">
+                <span class="food-meta">Instagram: non disponibile</span>
+                <span class="food-meta">Sito: non disponibile</span>
+              </div>
+              </li>
+              <li class="food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <button
+                      class="food-link food-name"
+                      type="button"
+                      data-target="bacco-cerere-2-0"
+                      aria-pressed="false"
+                    >
+                      BACCO &amp; CERERE 2.0
+                    </button>
+                  </div>
+                  <span class="food-address">Via Giuseppe Mazzini 4, Saturnia</span>
+                  <span class="food-meta">
+                    Tel. <a href="tel:+390564601268">0564601268</a>
+                  </span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta">Instagram: non disponibile</span>
+                  <span class="food-meta">Sito: non disponibile</span>
+                </div>
+              </li>
+              <li class="food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <button
+                      class="food-link food-name"
+                      type="button"
+                      data-target="ristorante-lo-scangeo"
+                      aria-pressed="false"
+                    >
+                      RISTORANTE LO SCANGEO
+                    </button>
+                  </div>
+                  <span class="food-address">Loc. La Crocina snc, Saturnia</span>
+                  <span class="food-meta">
+                    Tel. <a href="tel:+390564601515">0564601515</a>
+                  </span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta">A pochi metri in fondo al paese</span>
+                  <span class="food-meta">Instagram: non disponibile</span>
+                  <span class="food-meta">Sito: non disponibile</span>
+                </div>
+              </li>
+                </ul>
+              </div>
+            </details>
+            <details class="food-group">
+              <summary class="food-group-title">
+                <span class="food-title">Bar</span>
+              </summary>
+              <div class="food-group-body">
+                <ul class="food-list">
+              <li class="food-item is-bar">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <button
+                      class="food-link food-name"
+                      type="button"
+                      data-target="bar-centrale"
+                      aria-pressed="false"
+                    >
+                      ANTICO BAR CENTRALE
+                    </button>
+                  </div>
+                  <span class="food-address">Piazza Vittorio Veneto, 11, 58014 Saturnia GR</span>
+                  <span class="food-meta">Categoria: Bar / Caffetteria / Gelateria</span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta">
+                    Bar storico in piazza: gelati, caffe, aperitivi e colazioni.
+                  </span>
+                  <span class="food-meta">Servizio tabacchi disponibile.</span>
+                  <span class="food-meta">Orari tipici: 07:30 - 23:30 (stagionali)</span>
+                </div>
+              </li>
+              <li class="food-item is-bar">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <button
+                      class="food-link food-name"
+                      type="button"
+                      data-target="bar-di-luisa"
+                      aria-pressed="false"
+                    >
+                      DA LUISA
+                    </button>
+                  </div>
+                  <span class="food-address">Via Aurinia, 2A, 58014 Saturnia GR</span>
+                  <span class="food-meta">Categoria: Bar / Caffe / Locale snack</span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta">
+                    Colazioni, snack, aperitivi e piatti leggeri (bruschette,
+                    insalate, taglieri).
+                  </span>
+                  <span class="food-meta">Orari tipici: 07:00 - 20:00 (circa)</span>
+                </div>
+              </li>
+                </ul>
+              </div>
+            </details>
+            <details class="food-group">
+              <summary class="food-group-title">
+                <span class="food-title">Alimentari</span>
+              </summary>
+              <div class="food-group-body">
+                <ul class="food-list">
+              <li class="food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <a
+                      class="logo-link"
+                      href="assets/images/logo/passalacqua.jpg"
+                      aria-label="Apri logo Macelleria Passalacqua"
+                    >
+                      <img
+                        class="food-logo is-wide"
+                        src="assets/images/logo/passalacqua.jpg"
+                        alt="Logo Macelleria Passalacqua"
+                        loading="lazy"
+                      />
+                    </a>
+                  <button
+                    class="food-link food-name"
+                    type="button"
+                    data-target="macelleria-passalacqua"
+                    aria-pressed="false"
+                  >
+                    MACELLERIA PASSALACQUA
+                  </button>
+                  </div>
+                  <span class="food-address">Via Bernardino Ciacci, 4, 58014 Saturnia GR</span>
+                  <span class="food-meta">
+                    Categoria: Macelleria con salumeria e prodotti locali
+                  </span>
+                  <span class="food-meta">
+                    Tel. <a href="tel:+390564601269">+39 0564 601269</a>
+                  </span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta">
+                    Macelleria artigianale di famiglia: carni (anche Chianina e
+                    Limousine), salumi e tagli speciali.
+                  </span>
+                  <span class="food-meta">
+                    Servizi: vendita al dettaglio, asporto prodotti locali e
+                    consegna (anche online).
+                  </span>
+                  <span class="food-meta">
+                    Orari tipici: mattino e primo pomeriggio (stagionali).
+                  </span>
+                  <span class="food-meta">
+                    Sito:
+                    <a href="http://www.ipassalacqua.it/" target="_blank" rel="noopener">
+                      ipassalacqua.it
+                    </a>
+                  </span>
+                </div>
+              </li>
+              <li class="food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <button
+                      class="food-link food-name"
+                      type="button"
+                      data-target="alimentari-1"
+                      aria-pressed="false"
+                    >
+                      LA GASTRONOMICA DI PAOLO E LAURA
+                    </button>
+                  </div>
+                  <span class="food-address">Via dell'Ambito, 1, 58014 Saturnia GR</span>
+                  <span class="food-meta">Categoria: Grocery store / Alimentari</span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta">
+                    Alimentari con prodotti locali e specialita toscane:
+                    formaggi, salumi, freschi e artigianali.
+                  </span>
+                  <span class="food-meta">Orari tipici: 08:00 - 13:00</span>
+                </div>
+              </li>
+              <li class="food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <button
+                      class="food-link food-name"
+                      type="button"
+                      data-target="alimentari-2"
+                      aria-pressed="false"
+                    >
+                      EMPORIO SNC DI BARTOLINI
+                    </button>
+                  </div>
+                  <span class="food-address">Via Armando Diaz, 4, 58014 Saturnia GR</span>
+                  <span class="food-meta">Categoria: Supermercato / Alimentari</span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta">
+                    Negozio di generi alimentari e prodotti di prima necessita
+                    nel centro di Saturnia.
+                  </span>
+                  <span class="food-meta">Orari tipici: 08:30 - 12:30 (circa)</span>
+                </div>
+              </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="food-map-card">
+            <p class="eyebrow">Mappa del borgo</p>
+            <h2 class="food-title">Dove si trovano</h2>
+            <div class="map food-map show-ristoranti show-bars show-alimentari" data-view="fumetto">
+              <div class="map-frame">
+                <div class="map-zoom-controls" role="group" aria-label="Zoom mappa">
+                  <button class="zoom-button" type="button" data-zoom="in">
+                    +
+                  </button>
+                  <button class="zoom-button" type="button" data-zoom="out">
+                    -
+                  </button>
+                </div>
+                <div class="map-zoom">
+                <div class="map-viewport">
+                  <img
+                    class="map-img"
+                    data-view="fumetto"
+                    src="assets/images/SATURNIA.png"
+                    alt="Mappa di Saturnia"
+                    loading="lazy"
+                  />
+                  <div
+                    class="map-overlay"
+                    role="group"
+                    aria-label="Ristoranti e bar"
+                  >
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 40%; --y: 58%;"
+                      data-id="ristorante-i-due-cippi"
+                      data-category="ristoranti"
+                      data-title="Ristorante I Due Cippi"
+                      data-summary="Indirizzo: Piazza Vittorio Veneto 26/A - Tel: 0564601074 - Riposo: Martedi."
+                      data-logo="assets/images/logo/iduecippi.png"
+                      data-logo-alt="Logo Ristorante I Due Cippi"
+                      aria-label="Ristorante I Due Cippi"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 56%; --y: 46%;"
+                      data-id="oste-in-piazza"
+                      data-category="ristoranti"
+                      data-title="L'Oste in Piazza"
+                      data-summary="Indirizzo: Piazza Vittorio Veneto 5 - Tel: 0564601095."
+                      data-logo="assets/images/logo/oste%20in%20piazza.jpg"
+                      data-logo-alt="Logo L'Oste in Piazza"
+                      aria-label="L'Oste in Piazza"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 66%; --y: 38%;"
+                      data-id="ristorante-da-mario"
+                      data-category="ristoranti"
+                      data-title="Ristorante Da Mario"
+                      data-summary="Indirizzo: Via Giuseppe Mazzini 18 - Tel: 0564601309."
+                      aria-label="Ristorante Da Mario"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 58%; --y: 42%;"
+                      data-id="bacco-cerere-2-0"
+                      data-category="ristoranti"
+                      data-title="Bacco &amp; Cerere 2.0"
+                      data-summary="Indirizzo: Via Giuseppe Mazzini 4 - Tel: 0564601268."
+                      aria-label="Bacco &amp; Cerere 2.0"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 50%; --y: 48%;"
+                      data-id="saturnalia-rooms"
+                      data-category="ristoranti"
+                      data-title="Saturnalia"
+                      data-summary="Indirizzo: Piazza Vittorio Veneto 31 - Tel: 351 964 1172."
+                      aria-label="Saturnalia"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 58%; --y: 50%;"
+                      data-id="bar-centrale"
+                      data-category="bar"
+                      data-title="Antico Bar Centrale"
+                      data-summary="Indirizzo: Piazza Vittorio Veneto 11 - Gelati, caffe e colazioni."
+                      aria-label="Antico Bar Centrale"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 56%; --y: 36%;"
+                      data-id="bar-di-luisa"
+                      data-category="bar"
+                      data-title="Da Luisa"
+                      data-summary="Indirizzo: Via Aurinia 2A - Colazioni, snack e aperitivi."
+                      aria-label="Da Luisa"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 27%; --y: 49%;"
+                      data-id="macelleria-passalacqua"
+                      data-category="alimentari"
+                      data-title="Macelleria Passalacqua"
+                      data-summary="Indirizzo: Via Bernardino Ciacci 4 - Macelleria artigianale e prodotti locali."
+                      aria-label="Macelleria Passalacqua"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 40%; --y: 44%;"
+                      data-id="alimentari-1"
+                      data-category="alimentari"
+                      data-title="La Gastronomica di Paolo e Laura"
+                      data-summary="Indirizzo: Via dell'Ambito 1 - Prodotti locali e specialita toscane."
+                      aria-label="La Gastronomica di Paolo e Laura"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 69%; --y: 48%;"
+                      data-id="alimentari-2"
+                      data-category="alimentari"
+                      data-title="Emporio Snc Di Bartolini"
+                      data-summary="Indirizzo: Via Armando Diaz 4 - Alimentari in centro."
+                      aria-label="Emporio Snc Di Bartolini"
+                      aria-pressed="false"
+                    ></button>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const foodGroups = document.querySelectorAll(".food-group");
+      let foodGroupsTouched = false;
+      const foodMediaQuery = window.matchMedia("(max-width: 900px)");
+
+      const setFoodGroupsOpen = (isOpen) => {
+        foodGroups.forEach((group) => {
+          group.open = isOpen;
+        });
+      };
+
+      const initFoodGroups = () => {
+        setFoodGroupsOpen(!foodMediaQuery.matches);
+      };
+
+      foodGroups.forEach((group) => {
+        group.addEventListener("toggle", () => {
+          foodGroupsTouched = true;
+        });
+      });
+
+      initFoodGroups();
+
+      foodMediaQuery.addEventListener("change", (event) => {
+        if (event.matches) {
+          if (!foodGroupsTouched) {
+            setFoodGroupsOpen(false);
+          }
+        } else {
+          setFoodGroupsOpen(true);
+        }
+      });
+
+      const foodMap = document.querySelector(".food-map");
+      const foodPins = foodMap ? foodMap.querySelectorAll(".map-pin") : [];
+      const foodMapViewport = foodMap ? foodMap.querySelector(".map-viewport") : null;
+      const foodMapZoom = foodMap ? foodMap.querySelector(".map-zoom") : null;
+      const zoomInButton = foodMap
+        ? foodMap.querySelector('.zoom-button[data-zoom="in"]')
+        : null;
+      const zoomOutButton = foodMap
+        ? foodMap.querySelector('.zoom-button[data-zoom="out"]')
+        : null;
+      const foodLinks = document.querySelectorAll(".food-link");
+      const foodItems = document.querySelectorAll(".food-item");
+      const foodPinById = new Map(
+        Array.from(foodPins, (pin) => [pin.dataset.id, pin])
+      );
+      const foodMapCard = document.querySelector(".food-map-card");
+      const foodStorageKey = "saturnia-food-pins";
+      let foodZoomLevel = 1;
+      let foodPanX = 0;
+      let foodPanY = 0;
+      let isPanning = false;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panOriginX = 0;
+      let panOriginY = 0;
+
+      const getStoredFoodPositions = () => {
+        try {
+          return JSON.parse(localStorage.getItem(foodStorageKey) || "{}");
+        } catch (error) {
+          console.warn("Impossibile leggere le posizioni dei locali.", error);
+          return {};
+        }
+      };
+
+      const setFoodPinPosition = (pin, x, y) => {
+        pin.style.setProperty("--x", `${x}%`);
+        pin.style.setProperty("--y", `${y}%`);
+      };
+
+      const loadFoodPositions = () => {
+        if (!foodPins.length) return;
+        const saved = getStoredFoodPositions();
+        foodPins.forEach((pin) => {
+          const position = saved[pin.dataset.id];
+          if (!position) return;
+          setFoodPinPosition(pin, position.x, position.y);
+        });
+      };
+
+      const setFoodActive = (pin, forceOpen = false) => {
+        if (!pin) return;
+        const isSame = pin.classList.contains("is-active");
+        const shouldActivate = forceOpen ? true : !isSame;
+        foodPins.forEach((item) => {
+          const isActive = shouldActivate && item === pin;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+        foodLinks.forEach((link) => {
+          const isActive = shouldActivate && link.dataset.target === pin.dataset.id;
+          link.classList.toggle("is-active", isActive);
+          link.setAttribute("aria-pressed", String(isActive));
+        });
+        foodItems.forEach((item) => {
+          const link = item.querySelector(".food-link");
+          const isActive =
+            shouldActivate && link && link.dataset.target === pin.dataset.id;
+          item.classList.toggle("is-active", isActive);
+        });
+      };
+
+      const addFoodMapButtons = () => {
+        foodItems.forEach((item) => {
+          const link = item.querySelector(".food-link");
+          const targetId = link?.dataset.target;
+          if (!targetId || !foodPinById.has(targetId)) return;
+          if (item.querySelector(".food-map-jump")) return;
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "food-map-jump";
+          button.dataset.target = targetId;
+          button.setAttribute("aria-label", "Vai alla mappa");
+          button.setAttribute("title", "Vai alla mappa");
+          const icon = document.createElement("img");
+          icon.src = "assets/images/SATURNIA.png";
+          icon.alt = "Mappa fumetto di Saturnia";
+          icon.loading = "lazy";
+          icon.className = "food-map-icon";
+          button.appendChild(icon);
+          item.classList.add("has-map-jump");
+          item.appendChild(button);
+        });
+      };
+
+      const clampFoodPan = () => {
+        if (!foodMapZoom || !foodMapViewport) return;
+        const containerRect = foodMapZoom.getBoundingClientRect();
+        const viewportRect = foodMapViewport.getBoundingClientRect();
+        const baseWidth = viewportRect.width / foodZoomLevel;
+        const baseHeight = viewportRect.height / foodZoomLevel;
+        const scaledWidth = baseWidth * foodZoomLevel;
+        const scaledHeight = baseHeight * foodZoomLevel;
+        const maxX = Math.max(0, (scaledWidth - containerRect.width) / 2);
+        const maxY = Math.max(0, (scaledHeight - containerRect.height) / 2);
+        foodPanX = Math.min(maxX, Math.max(-maxX, foodPanX));
+        foodPanY = Math.min(maxY, Math.max(-maxY, foodPanY));
+      };
+
+      const applyFoodZoom = () => {
+        if (!foodMapViewport) return;
+        clampFoodPan();
+        foodMapViewport.style.transform = `translate(${foodPanX}px, ${foodPanY}px) scale(${foodZoomLevel})`;
+        if (foodMapZoom) {
+          foodMapZoom.classList.toggle("is-pannable", foodZoomLevel > 1);
+        }
+        if (zoomInButton) {
+          zoomInButton.disabled = foodZoomLevel >= 1.6;
+        }
+        if (zoomOutButton) {
+          zoomOutButton.disabled = foodZoomLevel <= 1;
+        }
+      };
+
+      const updateFoodZoom = (delta) => {
+        const next = Math.min(1.6, Math.max(1, foodZoomLevel + delta));
+        foodZoomLevel = Number.parseFloat(next.toFixed(2));
+        if (foodZoomLevel === 1) {
+          foodPanX = 0;
+          foodPanY = 0;
+        }
+        applyFoodZoom();
+      };
+
+      const buildPinSummary = (summaryText, tooltip) => {
+        if (!summaryText) return;
+        const parts = summaryText
+          .split(" - ")
+          .map((part) => part.trim())
+          .filter(Boolean);
+        if (!parts.length) return;
+        parts.forEach((part) => {
+          const summary = document.createElement("span");
+          summary.className = "pin-summary";
+          if (/^tel:/i.test(part)) {
+            const phoneText = part.replace(/^tel:\s*/i, "");
+            const phoneHref = phoneText.replace(/[^+\d]/g, "");
+            summary.textContent = "Tel: ";
+            if (phoneHref) {
+              const link = document.createElement("a");
+              link.href = `tel:${phoneHref}`;
+              link.textContent = phoneText;
+              link.className = "pin-phone";
+              summary.appendChild(link);
+            } else {
+              summary.appendChild(document.createTextNode(phoneText));
+            }
+          } else {
+            summary.textContent = part;
+          }
+          tooltip.appendChild(summary);
+        });
+      };
+
+      foodPins.forEach((pin) => {
+        const tooltip = document.createElement("span");
+        tooltip.className = "pin-tooltip";
+        tooltip.setAttribute("role", "tooltip");
+
+        const header = document.createElement("span");
+        header.className = "pin-header";
+
+        const title = document.createElement("span");
+        title.className = "pin-title";
+        title.textContent = pin.dataset.title || pin.getAttribute("aria-label") || "";
+        const logoSrc = pin.dataset.logo;
+        if (logoSrc) {
+          const logo = document.createElement("img");
+          logo.className = "pin-image";
+          logo.src = logoSrc;
+          logo.alt = pin.dataset.logoAlt || title.textContent || "Logo locale";
+          logo.loading = "lazy";
+          header.appendChild(logo);
+        }
+
+        header.appendChild(title);
+        tooltip.appendChild(header);
+
+        buildPinSummary(pin.dataset.summary, tooltip);
+
+        pin.appendChild(tooltip);
+      });
+
+      foodLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const targetPin = foodPinById.get(link.dataset.target);
+          if (!targetPin) return;
+          setFoodActive(targetPin, true);
+          targetPin.focus({ preventScroll: true });
+        });
+      });
+
+      foodItems.forEach((item) => {
+        item.addEventListener("click", (event) => {
+          if (event.target.closest("a, button")) return;
+          const link = item.querySelector(".food-link");
+          const targetPin = link ? foodPinById.get(link.dataset.target) : null;
+          if (!targetPin) return;
+          setFoodActive(targetPin, true);
+        });
+      });
+
+      addFoodMapButtons();
+
+      document.querySelectorAll(".food-map-jump").forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetPin = foodPinById.get(button.dataset.target);
+          if (!targetPin) return;
+          setFoodActive(targetPin, true);
+          if (foodMapCard) {
+            const prefersReduced =
+              window.matchMedia &&
+              window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            foodMapCard.scrollIntoView({
+              behavior: prefersReduced ? "auto" : "smooth",
+              block: "center",
+            });
+          }
+          targetPin.focus({ preventScroll: true });
+        });
+      });
+
+      foodPins.forEach((pin) => {
+        pin.addEventListener("click", () => {
+          setFoodActive(pin);
+        });
+      });
+
+      if (zoomInButton) {
+        zoomInButton.addEventListener("click", () => updateFoodZoom(0.1));
+      }
+
+      if (zoomOutButton) {
+        zoomOutButton.addEventListener("click", () => updateFoodZoom(-0.1));
+      }
+
+      if (foodMapZoom) {
+        foodMapZoom.addEventListener("pointerdown", (event) => {
+          if (foodZoomLevel <= 1) return;
+          if (event.pointerType === "mouse" && event.button !== 0) return;
+          if (event.target.closest(".map-pin")) return;
+          if (event.target.closest(".zoom-button")) return;
+          isPanning = true;
+          panStartX = event.clientX;
+          panStartY = event.clientY;
+          panOriginX = foodPanX;
+          panOriginY = foodPanY;
+          foodMapZoom.classList.add("is-panning");
+          foodMapZoom.setPointerCapture(event.pointerId);
+        });
+
+        foodMapZoom.addEventListener("pointermove", (event) => {
+          if (!isPanning) return;
+          const deltaX = event.clientX - panStartX;
+          const deltaY = event.clientY - panStartY;
+          foodPanX = panOriginX + deltaX;
+          foodPanY = panOriginY + deltaY;
+          applyFoodZoom();
+        });
+
+        const endPan = (event) => {
+          if (!isPanning) return;
+          isPanning = false;
+          foodMapZoom.classList.remove("is-panning");
+          if (foodMapZoom.hasPointerCapture(event.pointerId)) {
+            foodMapZoom.releasePointerCapture(event.pointerId);
+          }
+        };
+
+        foodMapZoom.addEventListener("pointerup", endPan);
+        foodMapZoom.addEventListener("pointercancel", endPan);
+      }
+
+      loadFoodPositions();
+      applyFoodZoom();
+
+      if (foodPins.length) {
+        setFoodActive(foodPins[0], true);
+      }
+    </script>
+    <script>
+      const visitorArrivi = document.getElementById("visitor-arrivi");
+      const visitorPresenze = document.getElementById("visitor-presenze");
+      const visitorYear = document.getElementById("visitor-year");
+
+      const formatNumber = (value) =>
+        new Intl.NumberFormat("it-IT").format(Math.round(value));
+
+      const extractLatestObservation = (payload) => {
+        const dataset = payload?.data?.dataSets?.[0];
+        const series = dataset?.series;
+        const seriesKey = series ? Object.keys(series)[0] : null;
+        const observations = seriesKey ? series[seriesKey]?.observations : null;
+        const timeValues =
+          payload?.data?.structure?.dimensions?.observation?.[0]?.values || [];
+
+        if (!observations || !timeValues.length) {
+          return null;
+        }
+
+        let latest = null;
+        Object.keys(observations).forEach((key) => {
+          const idx = Number(key);
+          const value = observations[key]?.[0];
+          const time = timeValues[idx]?.id;
+          if (value == null || !time) {
+            return;
+          }
+          if (!latest || time > latest.time) {
+            latest = { time, value };
+          }
+        });
+
+        return latest;
+      };
+
+      const loadVisitorData = async () => {
+        try {
+          const response = await fetch("data/istat-grosseto.json");
+          if (!response.ok) {
+            throw new Error("Local data not found");
+          }
+          const data = await response.json();
+          if (!data || data.arrivi == null || data.presenze == null) {
+            throw new Error("Invalid data");
+          }
+          visitorArrivi.textContent = formatNumber(data.arrivi);
+          visitorPresenze.textContent = formatNumber(data.presenze);
+          visitorYear.textContent = `Anno: ${data.anno}`;
+        } catch (error) {
+          if (visitorYear) {
+            visitorYear.textContent = "Dati non disponibili al momento.";
+          }
+        }
+      };
+
+      loadVisitorData();
+
+      const visitorWidget = document.getElementById("visitor-widget");
+      const visitorClose = document.querySelector(".visitor-close");
+      const visitorWidgetState = "visitor-widget-collapsed";
+      if (visitorWidget && window.localStorage) {
+        const isCollapsed = window.localStorage.getItem(visitorWidgetState) === "1";
+        if (isCollapsed) {
+          visitorWidget.classList.add("is-collapsed");
+        }
+      }
+      if (visitorClose && visitorWidget) {
+        visitorClose.addEventListener("click", (event) => {
+          event.stopPropagation();
+          visitorWidget.classList.toggle("is-collapsed");
+          if (window.localStorage) {
+            window.localStorage.setItem(visitorWidgetState, visitorWidget.classList.contains("is-collapsed") ? "1" : "0");
+          }
+        });
+      }
+
+      if (visitorWidget) {
+        visitorWidget.addEventListener("click", () => {
+          if (visitorWidget.classList.contains("is-collapsed")) {
+            visitorWidget.classList.remove("is-collapsed");
+            if (window.localStorage) {
+              window.localStorage.setItem(visitorWidgetState, "0");
+            }
+          }
+        });
+      }
+    </script>
+    <script src="weather-widget.js?v=20260201"></script>
+  </body>
+</html>
+
+

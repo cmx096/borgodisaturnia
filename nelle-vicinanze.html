@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nelle vicinanze - Borgo di Saturnia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260201" />
+  </head>
+  <body>
+    <div
+      class="global-weather"
+      data-thermal="37.5"
+    >
+      <span class="global-weather-label">Meteo Saturnia</span>
+      <span class="global-weather-value" aria-live="polite">Caricamento...</span>
+      <div class="global-weather-row">
+        <span class="global-weather-thermal"></span>
+        <button class="global-weather-toggle" type="button" aria-label="Apri meteo settimanale">
+          <svg class="global-weather-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="global-weather-close"
+        type="button"
+        aria-label="Chiudi meteo"
+      >
+        X <span class="weather-close-text">Chiudi</span>
+      </button>
+      <div class="global-weather-weekly" id="global-weather-weekly" hidden>
+        <p class="global-weather-weekly-title">Prossimi 7 giorni</p>
+        <p class="global-weather-weekly-status">Caricamento...</p>
+        <ul class="global-weather-weekly-list"></ul>
+      </div>
+    </div>
+    <div class="visitor-widget" id="visitor-widget" aria-live="polite">
+      <span class="visitor-eyebrow">Stima visitatori</span>
+      <p class="visitor-title">Provincia di Grosseto</p>
+      <div class="visitor-grid">
+        <div class="visitor-stat">
+          <span class="visitor-label">Arrivi</span>
+          <span class="visitor-value" id="visitor-arrivi">-</span>
+        </div>
+        <div class="visitor-stat">
+          <span class="visitor-label">Presenze</span>
+          <span class="visitor-value" id="visitor-presenze">-</span>
+        </div>
+      </div>
+      <p class="visitor-meta" id="visitor-year">Anno: -</p>
+      <button class="visitor-close" type="button" aria-label="Chiudi stima visitatori">X <span class="visitor-close-text">Chiudi</span></button>
+      <p class="visitor-source">
+        Fonte: ISTAT, movimento clienti negli esercizi ricettivi (annuale).
+      </p>
+    </div>
+    <main class="page">
+      <nav class="site-nav" aria-label="Menu principale">
+        <a class="nav-tab" href="index.html">Borgo</a>
+        <a class="nav-tab" href="galleria.html">Galleria</a>
+        <a class="nav-tab" href="dove-mangiare.html">
+          <span class="nav-label-full">Mangiare</span>
+          <span class="nav-label-short">Mangiare</span>
+        </a>
+        <a class="nav-tab" href="dove-dormire.html">
+          <span class="nav-label-full">Dormire</span>
+          <span class="nav-label-short">Dormire</span>
+        </a>
+        <details class="nav-dropdown">
+          <summary class="nav-tab">
+            <span class="nav-label-full">Cosa fare</span>
+            <span class="nav-label-short">Cosa fare</span>
+          </summary>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="cosa-fare.html#cavallo">Cavallo</a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#degustazioni">
+              Degustazioni
+            </a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#golf">Golf</a>
+          </div>
+        </details>
+        <a class="nav-tab" href="eventi.html">Eventi</a>
+        <a class="nav-tab is-active" href="nelle-vicinanze.html" aria-current="page">
+          <span class="nav-label-full">Nelle vicinanze</span>
+          <span class="nav-label-short">Vicinanze</span>
+        </a>
+      </nav>
+      <header class="hero">
+        <p class="eyebrow">Borgo di Saturnia</p>
+        <h1>Nelle vicinanze</h1>
+        <p class="subtitle">
+          Distanze utili per esplorare le mete intorno al borgo.
+        </p>
+      </header>
+      <section class="distance-section" id="distanze">
+        <div class="distance-card">
+          <p class="eyebrow">Distanze</p>
+          <h2 class="distance-title">A pochi minuti dal borgo</h2>
+          <p class="distance-intro">
+            Il borgo di Saturnia si trova a breve distanza dalle cascatelle del
+            Mulino, dal Club Termale e da alcuni centri vicini della Maremma.
+          </p>
+          <div class="distance-grid">
+            <div class="distance-item">
+              <div class="distance-info">
+                <h3>Cascatelle del Mulino</h3>
+                <p>2 km dal borgo</p>
+              </div>
+              <div class="distance-bar" style="--fill: 7%;">
+                <span class="distance-fill" aria-hidden="true">
+                  <span class="distance-icon distance-icon--walk" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <circle cx="9" cy="5" r="2"></circle>
+                      <path
+                        d="M9 7l2 4 3 2m-3-2-3 5m2-4-4 3m6-4 4 6"
+                      ></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="distance-item">
+              <div class="distance-info">
+                <h3>Club Termale</h3>
+                <p>1 km dal borgo</p>
+              </div>
+              <div class="distance-bar" style="--fill: 3%;">
+                <span class="distance-fill" aria-hidden="true">
+                  <span class="distance-icon distance-icon--walk" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <circle cx="9" cy="5" r="2"></circle>
+                      <path
+                        d="M9 7l2 4 3 2m-3-2-3 5m2-4-4 3m6-4 4 6"
+                      ></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="distance-item">
+              <div class="distance-info">
+                <h3>Montemerano</h3>
+                <p>8,4 km dal borgo</p>
+              </div>
+              <p class="distance-note">
+                Borgo medievale con centro storico suggestivo e chiese antiche.
+              </p>
+              <div class="distance-bar" style="--fill: 24%;">
+                <span class="distance-fill" aria-hidden="true">
+                  <span class="distance-icon distance-icon--car" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path
+                        d="M3 13l2-5h12l3 5v5h-2a2 2 0 0 1-4 0H10a2 2 0 0 1-4 0H3z"
+                      ></path>
+                      <circle cx="7" cy="18" r="1.5"></circle>
+                      <circle cx="17" cy="18" r="1.5"></circle>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="distance-item">
+              <div class="distance-info">
+                <h3>Manciano</h3>
+                <p>14 km dal borgo</p>
+              </div>
+              <p class="distance-note">
+                Capoluogo comunale; attrazioni storiche e panoramiche.
+              </p>
+              <div class="distance-bar" style="--fill: 40%;">
+                <span class="distance-fill" aria-hidden="true">
+                  <span class="distance-icon distance-icon--car" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path
+                        d="M3 13l2-5h12l3 5v5h-2a2 2 0 0 1-4 0H10a2 2 0 0 1-4 0H3z"
+                      ></path>
+                      <circle cx="7" cy="18" r="1.5"></circle>
+                      <circle cx="17" cy="18" r="1.5"></circle>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="distance-item">
+              <div class="distance-info">
+                <h3>Pitigliano</h3>
+                <p>26 km dal borgo</p>
+              </div>
+              <p class="distance-note">
+                Citta del tufo con forte impronta etrusca e medievale.
+              </p>
+              <div class="distance-bar" style="--fill: 74%;">
+                <span class="distance-fill" aria-hidden="true">
+                  <span class="distance-icon distance-icon--car" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path
+                        d="M3 13l2-5h12l3 5v5h-2a2 2 0 0 1-4 0H10a2 2 0 0 1-4 0H3z"
+                      ></path>
+                      <circle cx="7" cy="18" r="1.5"></circle>
+                      <circle cx="17" cy="18" r="1.5"></circle>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="distance-item">
+              <div class="distance-info">
+                <h3>Sorano</h3>
+                <p>35 km dal borgo</p>
+              </div>
+              <p class="distance-note">
+                Centro storico arroccato su roccia tufacea.
+              </p>
+              <div class="distance-bar" style="--fill: 100%;">
+                <span class="distance-fill" aria-hidden="true">
+                  <span class="distance-icon distance-icon--car" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path
+                        d="M3 13l2-5h12l3 5v5h-2a2 2 0 0 1-4 0H10a2 2 0 0 1-4 0H3z"
+                      ></path>
+                      <circle cx="7" cy="18" r="1.5"></circle>
+                      <circle cx="17" cy="18" r="1.5"></circle>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="distance-item">
+              <div class="distance-info">
+                <h3>Sovana</h3>
+                <p>25,5 km dal borgo</p>
+              </div>
+              <p class="distance-note">
+                Antico borgo etrusco-medievale con monumenti storici.
+              </p>
+              <div class="distance-bar" style="--fill: 73%;">
+                <span class="distance-fill" aria-hidden="true">
+                  <span class="distance-icon distance-icon--car" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path
+                        d="M3 13l2-5h12l3 5v5h-2a2 2 0 0 1-4 0H10a2 2 0 0 1-4 0H3z"
+                      ></path>
+                      <circle cx="7" cy="18" r="1.5"></circle>
+                      <circle cx="17" cy="18" r="1.5"></circle>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img
+            class="photo-image"
+            src="assets/images/tet.png"
+            alt="Panorama di Saturnia"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </main>
+    <script>
+      const visitorArrivi = document.getElementById("visitor-arrivi");
+      const visitorPresenze = document.getElementById("visitor-presenze");
+      const visitorYear = document.getElementById("visitor-year");
+
+      const formatNumber = (value) =>
+        new Intl.NumberFormat("it-IT").format(Math.round(value));
+
+      const extractLatestObservation = (payload) => {
+        const dataset = payload?.data?.dataSets?.[0];
+        const series = dataset?.series;
+        const seriesKey = series ? Object.keys(series)[0] : null;
+        const observations = seriesKey ? series[seriesKey]?.observations : null;
+        const timeValues =
+          payload?.data?.structure?.dimensions?.observation?.[0]?.values || [];
+
+        if (!observations || !timeValues.length) {
+          return null;
+        }
+
+        let latest = null;
+        Object.keys(observations).forEach((key) => {
+          const idx = Number(key);
+          const value = observations[key]?.[0];
+          const time = timeValues[idx]?.id;
+          if (value == null || !time) {
+            return;
+          }
+          if (!latest || time > latest.time) {
+            latest = { time, value };
+          }
+        });
+
+        return latest;
+      };
+
+      const loadVisitorData = async () => {
+        try {
+          const response = await fetch("data/istat-grosseto.json");
+          if (!response.ok) {
+            throw new Error("Local data not found");
+          }
+          const data = await response.json();
+          if (!data || data.arrivi == null || data.presenze == null) {
+            throw new Error("Invalid data");
+          }
+          visitorArrivi.textContent = formatNumber(data.arrivi);
+          visitorPresenze.textContent = formatNumber(data.presenze);
+          visitorYear.textContent = `Anno: ${data.anno}`;
+        } catch (error) {
+          if (visitorYear) {
+            visitorYear.textContent = "Dati non disponibili al momento.";
+          }
+        }
+      };
+
+      loadVisitorData();
+
+      const visitorWidget = document.getElementById("visitor-widget");
+      const visitorClose = document.querySelector(".visitor-close");
+      const visitorWidgetState = "visitor-widget-collapsed";
+      if (visitorWidget && window.localStorage) {
+        const isCollapsed = window.localStorage.getItem(visitorWidgetState) === "1";
+        if (isCollapsed) {
+          visitorWidget.classList.add("is-collapsed");
+        }
+      }
+      if (visitorClose && visitorWidget) {
+        visitorClose.addEventListener("click", (event) => {
+          event.stopPropagation();
+          visitorWidget.classList.toggle("is-collapsed");
+          if (window.localStorage) {
+            window.localStorage.setItem(visitorWidgetState, visitorWidget.classList.contains("is-collapsed") ? "1" : "0");
+          }
+        });
+      }
+
+      if (visitorWidget) {
+        visitorWidget.addEventListener("click", () => {
+          if (visitorWidget.classList.contains("is-collapsed")) {
+            visitorWidget.classList.remove("is-collapsed");
+            if (window.localStorage) {
+              window.localStorage.setItem(visitorWidgetState, "0");
+            }
+          }
+        });
+      }
+    </script>
+    <script src="weather-widget.js?v=20260201"></script>
+  </body>
+</html>
+
+

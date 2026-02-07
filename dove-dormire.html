@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dove dormire - Borgo di Saturnia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260201" />
+  </head>
+  <body>
+    <div
+      class="global-weather"
+      data-thermal="37.5"
+    >
+      <span class="global-weather-label">Meteo Saturnia</span>
+      <span class="global-weather-value" aria-live="polite">Caricamento...</span>
+      <div class="global-weather-row">
+        <span class="global-weather-thermal"></span>
+        <button class="global-weather-toggle" type="button" aria-label="Apri meteo settimanale">
+          <svg class="global-weather-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="global-weather-close"
+        type="button"
+        aria-label="Chiudi meteo"
+      >
+        X <span class="weather-close-text">Chiudi</span>
+      </button>
+      <div class="global-weather-weekly" id="global-weather-weekly" hidden>
+        <p class="global-weather-weekly-title">Prossimi 7 giorni</p>
+        <p class="global-weather-weekly-status">Caricamento...</p>
+        <ul class="global-weather-weekly-list"></ul>
+      </div>
+    </div>
+    <div class="visitor-widget" id="visitor-widget" aria-live="polite">
+      <span class="visitor-eyebrow">Stima visitatori</span>
+      <p class="visitor-title">Provincia di Grosseto</p>
+      <div class="visitor-grid">
+        <div class="visitor-stat">
+          <span class="visitor-label">Arrivi</span>
+          <span class="visitor-value" id="visitor-arrivi">-</span>
+        </div>
+        <div class="visitor-stat">
+          <span class="visitor-label">Presenze</span>
+          <span class="visitor-value" id="visitor-presenze">-</span>
+        </div>
+      </div>
+      <p class="visitor-meta" id="visitor-year">Anno: -</p>
+      <button class="visitor-close" type="button" aria-label="Chiudi stima visitatori">X <span class="visitor-close-text">Chiudi</span></button>
+      <p class="visitor-source">
+        Fonte: ISTAT, movimento clienti negli esercizi ricettivi (annuale).
+      </p>
+    </div>
+    <main class="page">
+      <nav class="site-nav" aria-label="Menu principale">
+        <a class="nav-tab" href="index.html">Borgo</a>
+        <a class="nav-tab" href="galleria.html">Galleria</a>
+        <a class="nav-tab" href="dove-mangiare.html">
+          <span class="nav-label-full">Mangiare</span>
+          <span class="nav-label-short">Mangiare</span>
+        </a>
+        <a class="nav-tab is-active" href="dove-dormire.html" aria-current="page">
+          <span class="nav-label-full">Dormire</span>
+          <span class="nav-label-short">Dormire</span>
+        </a>
+        <details class="nav-dropdown">
+          <summary class="nav-tab">
+            <span class="nav-label-full">Cosa fare</span>
+            <span class="nav-label-short">Cosa fare</span>
+          </summary>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="cosa-fare.html#cavallo">Cavallo</a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#degustazioni">
+              Degustazioni
+            </a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#golf">Golf</a>
+          </div>
+        </details>
+        <a class="nav-tab" href="eventi.html">Eventi</a>
+        <a class="nav-tab" href="nelle-vicinanze.html">
+          <span class="nav-label-full">Nelle vicinanze</span>
+          <span class="nav-label-short">Vicinanze</span>
+        </a>
+      </nav>
+      <header class="hero">
+        <p class="eyebrow">Borgo di Saturnia</p>
+        <h1>Dove dormire</h1>
+        <p class="subtitle">
+          Strutture ricettive nel borgo per soggiorni autentici.
+        </p>
+      </header>
+      <section class="stay-section food-section" id="dove-dormire">
+        <div class="stay-layout food-layout">
+          <div class="stay-card food-card">
+            <p class="eyebrow">Dove dormire a Saturnia</p>
+            <h2 class="stay-title food-title">Nel borgo</h2>
+            <ul class="stay-list food-list">
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <a
+                      class="logo-link"
+                      href="assets/images/logo/dimora%20dei%20magi.jpg"
+                      aria-label="Apri logo Dimora dei Magi"
+                    >
+                      <img
+                        class="food-logo stay-logo"
+                        src="assets/images/logo/dimora%20dei%20magi.jpg"
+                        alt="Logo Dimora dei Magi"
+                        loading="lazy"
+                      />
+                    </a>
+                    <button
+                      class="stay-link food-link stay-name food-name"
+                      type="button"
+                      data-target="dimora-dei-magi"
+                      aria-pressed="false"
+                    >
+                      DIMORA DEI MAGI
+                    </button>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Via Aldobrandeschi, 10/A - 58014 Saturnia (GR), Italia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+393482566392">+39 348 2566392</a>
+                  </span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta stay-meta">
+                    Sito:
+                    <a
+                      href="https://www.booking.com/hotel/it/la-dimora-dei-magi.it.html"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      booking.com
+                    </a>
+                  </span>
+                  <div class="stay-actions">
+                    <a
+                      class="stay-booking"
+                      href="https://www.booking.com/hotel/it/la-dimora-dei-magi.it.html"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Verifica disponibilita
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <a
+                      class="logo-link"
+                      href="assets/images/logo/casetta%20dei%20mauri.jpg"
+                      aria-label="Apri logo Casetta dei Mauri"
+                    >
+                      <img
+                        class="food-logo stay-logo"
+                        src="assets/images/logo/casetta%20dei%20mauri.jpg"
+                        alt="Logo Casetta dei Mauri"
+                        loading="lazy"
+                      />
+                    </a>
+                    <button
+                      class="stay-link food-link stay-name food-name"
+                      type="button"
+                      data-target="casetta-dei-mauri"
+                      aria-pressed="false"
+                    >
+                      CASETTA DEI MAURI
+                    </button>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Via degli Aldobrandeschi, 13 - 58014 Saturnia (GR), Italia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+393482566392">+39 348 2566392</a>
+                  </span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta stay-meta">
+                    Sito:
+                    <a
+                      href="https://www.booking.com/hotel/it/la-casetta-dei-mauri.it.html"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      booking.com
+                    </a>
+                  </span>
+                  <div class="stay-actions">
+                    <a
+                      class="stay-booking"
+                      href="https://www.booking.com/hotel/it/la-casetta-dei-mauri.it.html"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Verifica disponibilita
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <a
+                      class="logo-link"
+                      href="assets/images/logo/camere%20dei%20magi.jpg"
+                      aria-label="Apri logo Camere dei Magi"
+                    >
+                      <img
+                        class="food-logo stay-logo"
+                        src="assets/images/logo/camere%20dei%20magi.jpg"
+                        alt="Logo Camere dei Magi"
+                        loading="lazy"
+                      />
+                    </a>
+                    <button
+                      class="stay-link food-link stay-name food-name"
+                      type="button"
+                      data-target="camere-dei-magi"
+                      aria-pressed="false"
+                    >
+                      CAMERE DEI MAGI
+                    </button>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Via Italia, 3a - 58014 Saturnia (GR), Italia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+393482566392">+39 348 2566392</a>
+                  </span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta stay-meta">
+                    Sito:
+                    <a href="https://lecameredeimagi.com/" target="_blank" rel="noopener">
+                      lecameredeimagi.com
+                    </a>
+                  </span>
+                  <div class="stay-actions">
+                    <a
+                      class="stay-booking"
+                      href="https://www.booking.com/hotel/it/le-camere-dei-magi.it.html"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Verifica disponibilita
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <button
+                      class="stay-link food-link stay-name food-name"
+                      type="button"
+                      data-target="saturnalia-village-rooms"
+                      aria-pressed="false"
+                    >
+                      SATURNALIA VILLAGE ROOMS
+                    </button>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Piazza Vittorio Veneto, 31 - 58014 Manciano (GR), Italia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+393519641172">+39 351 9641172</a>
+                  </span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta stay-meta">
+                    Sito:
+                    <a
+                      href="https://www.saturnalialamaliosa.it/saturnalia-rooms/"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      saturnalialamaliosa.it/saturnalia-rooms
+                    </a>
+                  </span>
+                  <div class="stay-actions">
+                    <a
+                      class="stay-booking"
+                      href="https://www.booking.com/hotel/it/saturnalia-five-rooms.it.html"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Verifica disponibilita
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <button
+                      class="stay-link food-link stay-name food-name"
+                      type="button"
+                      data-target="tellus-saturnia"
+                      aria-pressed="false"
+                    >
+                      TELLUS SATURNIA
+                    </button>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Via Giuseppe Mazzini, 4/D - 58014 Saturnia (GR), Italia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+393384129138">+39 338 412 9138</a>
+                  </span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta stay-meta">
+                    Sito:
+                    <a href="https://www.saturniatellushotel.it/" target="_blank" rel="noopener">
+                      saturniatellushotel.it
+                    </a>
+                  </span>
+                  <div class="stay-actions">
+                    <a
+                      class="stay-booking"
+                      href="https://www.booking.com/hotel/it/tellus-saturnia.it.html"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Verifica disponibilita
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <button
+                      class="stay-link food-link stay-name food-name"
+                      type="button"
+                      data-target="hotel-villa-clodia"
+                      aria-pressed="false"
+                    >
+                      HOTEL VILLA CLODIA
+                    </button>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Via Italia, 43 - 58014 Saturnia (GR), Italia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+390564601212">+39 0564 601212</a>
+                  </span>
+                </div>
+                <div class="food-block food-block-extra">
+                  <span class="food-meta stay-meta">
+                    Sito:
+                    <a href="https://www.hotelvillaclodia.it/" target="_blank" rel="noopener">
+                      hotelvillaclodia.it
+                    </a>
+                  </span>
+                  <div class="stay-actions">
+                    <a
+                      class="stay-booking"
+                      href="https://www.booking.com/city/it/saturnia.it.html"
+                      target="_blank"
+                      rel="noopener"
+                      title="Cerca Hotel Villa Clodia su Booking"
+                    >
+                      Verifica disponibilita
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <h2 class="stay-title food-title">Strutture ricettive fuori dal borgo</h2>
+            <ul class="stay-list food-list">
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <span class="stay-name food-name">
+                      Terme di Saturnia Natural Destination
+                    </span>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Localita Follonata, SP10, Saturnia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+390564600111">+39 0564 600111</a>
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Sito:
+                    <a href="https://www.termedisaturnia.it/" target="_blank" rel="noopener">
+                      termedisaturnia.it
+                    </a>
+                  </span>
+                </div>
+              </li>
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <span class="stay-name food-name">Hotel Saturno Fonte Pura</span>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Localita Follonata, Saturnia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+390564600474">+39 0564 600474</a>
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Sito:
+                    <a
+                      href="https://www.hotelsaturnofontepura.com/"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      hotelsaturnofontepura.com
+                    </a>
+                  </span>
+                </div>
+              </li>
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <span class="stay-name food-name">Agriturismo Le Cascatelle</span>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Via Terme di Saturnia 6, Saturnia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+390564600601">+39 0564 600601</a>
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Sito:
+                    <a href="https://www.beblecascatelle.com/" target="_blank" rel="noopener">
+                      beblecascatelle.com
+                    </a>
+                  </span>
+                </div>
+              </li>
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <span class="stay-name food-name">B&amp;B 8380 Saturnia Terme</span>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Via Provinciale Follonata, Saturnia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+393394966154">+39 339 496 6154</a>
+                  </span>
+                </div>
+              </li>
+              <li class="stay-item food-item">
+                <div class="food-block food-block-main">
+                  <div class="food-header">
+                    <span class="stay-name food-name">Agriturismo La Grada</span>
+                  </div>
+                  <span class="food-address stay-meta">
+                    Localita La Grada, Saturnia
+                  </span>
+                  <span class="food-meta stay-meta">
+                    Tel. <a href="tel:+390564600440">+39 0564 600440</a>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="stay-map-card food-map-card">
+            <p class="eyebrow">Mappa del borgo</p>
+            <h2 class="stay-title food-title">Dove si trovano</h2>
+            <div class="map stay-map food-map show-hotels" data-view="fumetto">
+              <div class="map-frame">
+                <div class="map-viewport">
+                  <img
+                    class="map-img"
+                    data-view="fumetto"
+                    src="assets/images/SATURNIA.png"
+                    alt="Mappa di Saturnia"
+                    loading="lazy"
+                  />
+                  <div
+                    class="map-overlay"
+                    role="group"
+                    aria-label="Strutture alberghiere"
+                  >
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 46%; --y: 48%;"
+                      data-id="saturnalia-village-rooms"
+                      data-category="hotel"
+                      data-title="Saturnalia Village Rooms"
+                      data-summary="Indirizzo: Piazza Vittorio Veneto 31 - Tel: +39 351 964 1172."
+                      aria-label="Saturnalia Village Rooms"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 66%; --y: 38%;"
+                      data-id="tellus-saturnia"
+                      data-category="hotel"
+                      data-title="Tellus Saturnia"
+                      data-summary="Indirizzo: Via Giuseppe Mazzini 4/D - Tel: +39 338 412 9138."
+                      aria-label="Tellus Saturnia"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 88%; --y: 36%;"
+                      data-id="hotel-villa-clodia"
+                      data-category="hotel"
+                      data-title="Hotel Villa Clodia"
+                      data-summary="Indirizzo: Via Italia 43 - Tel: +39 0564 601212."
+                      aria-label="Hotel Villa Clodia"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 30%; --y: 40%;"
+                      data-id="dimora-dei-magi"
+                      data-category="hotel"
+                      data-title="Dimora dei Magi"
+                      data-logo="assets/images/logo/dimora%20dei%20magi.jpg"
+                      data-logo-alt="Logo Dimora dei Magi"
+                      data-summary="Indirizzo: Via Aldobrandeschi 10/A - Tel: +39 348 2566392."
+                      aria-label="Dimora dei Magi"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 34%; --y: 38%;"
+                      data-id="casetta-dei-mauri"
+                      data-category="hotel"
+                      data-title="Casetta dei Mauri"
+                      data-logo="assets/images/logo/casetta%20dei%20mauri.jpg"
+                      data-logo-alt="Logo Casetta dei Mauri"
+                      data-summary="Indirizzo: Via degli Aldobrandeschi 13 - Tel: +39 348 2566392."
+                      aria-label="Casetta dei Mauri"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="map-pin"
+                      type="button"
+                      style="--x: 72%; --y: 50%;"
+                      data-id="camere-dei-magi"
+                      data-category="hotel"
+                      data-title="Camere dei Magi"
+                      data-logo="assets/images/logo/camere%20dei%20magi.jpg"
+                      data-logo-alt="Logo Camere dei Magi"
+                      data-summary="Indirizzo: Via Italia 3a - Tel: +39 348 2566392."
+                      aria-label="Camere dei Magi"
+                      aria-pressed="false"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const stayMap = document.querySelector(".stay-map");
+      const stayPins = stayMap ? stayMap.querySelectorAll(".map-pin") : [];
+      const stayLinks = document.querySelectorAll(".stay-link");
+      const stayItems = document.querySelectorAll(".stay-item");
+      const stayPinById = new Map(
+        Array.from(stayPins, (pin) => [pin.dataset.id, pin])
+      );
+      const stayMapCard = document.querySelector(".stay-map-card");
+
+      const addStayMapButtons = () => {
+        stayItems.forEach((item) => {
+          const link = item.querySelector(".stay-link");
+          const targetId = link?.dataset.target;
+          if (!targetId || !stayPinById.has(targetId)) return;
+          if (item.querySelector(".food-map-jump")) return;
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "food-map-jump";
+          button.dataset.target = targetId;
+          button.setAttribute("aria-label", "Vai alla mappa");
+          button.setAttribute("title", "Vai alla mappa");
+          const icon = document.createElement("img");
+          icon.src = "assets/images/SATURNIA.png";
+          icon.alt = "Mappa fumetto di Saturnia";
+          icon.loading = "lazy";
+          icon.className = "food-map-icon";
+          button.appendChild(icon);
+          item.classList.add("has-map-jump");
+          item.appendChild(button);
+        });
+      };
+
+      const setStayActive = (pin) => {
+        if (!pin) return;
+        stayPins.forEach((item) => {
+          const isActive = item === pin;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+        stayLinks.forEach((link) => {
+          const isActive = link.dataset.target === pin.dataset.id;
+          link.classList.toggle("is-active", isActive);
+          link.setAttribute("aria-pressed", String(isActive));
+        });
+        stayItems.forEach((item) => {
+          const link = item.querySelector(".stay-link");
+          const isActive = link && link.dataset.target === pin.dataset.id;
+          item.classList.toggle("is-active", isActive);
+        });
+      };
+
+      const buildPinSummary = (summaryText, tooltip) => {
+        if (!summaryText) return;
+        const parts = summaryText
+          .split(" - ")
+          .map((part) => part.trim())
+          .filter(Boolean);
+        if (!parts.length) return;
+        parts.forEach((part) => {
+          const summary = document.createElement("span");
+          summary.className = "pin-summary";
+          if (/^tel:/i.test(part)) {
+            const phoneText = part.replace(/^tel:\s*/i, "");
+            const phoneHref = phoneText.replace(/[^+\d]/g, "");
+            summary.textContent = "Tel: ";
+            if (phoneHref) {
+              const link = document.createElement("a");
+              link.href = `tel:${phoneHref}`;
+              link.textContent = phoneText;
+              link.className = "pin-phone";
+              summary.appendChild(link);
+            } else {
+              summary.appendChild(document.createTextNode(phoneText));
+            }
+          } else {
+            summary.textContent = part;
+          }
+          tooltip.appendChild(summary);
+        });
+      };
+
+      stayPins.forEach((pin) => {
+        const tooltip = document.createElement("span");
+        tooltip.className = "pin-tooltip";
+        tooltip.setAttribute("role", "tooltip");
+
+        const header = document.createElement("span");
+        header.className = "pin-header";
+
+        const title = document.createElement("span");
+        title.className = "pin-title";
+        title.textContent = pin.dataset.title || pin.getAttribute("aria-label") || "";
+        const logoSrc = pin.dataset.logo;
+        if (logoSrc) {
+          const logo = document.createElement("img");
+          logo.className = "pin-image";
+          logo.src = logoSrc;
+          logo.alt = pin.dataset.logoAlt || title.textContent || "Logo struttura";
+          logo.loading = "lazy";
+          header.appendChild(logo);
+        }
+
+        header.appendChild(title);
+        tooltip.appendChild(header);
+
+        buildPinSummary(pin.dataset.summary, tooltip);
+
+        pin.appendChild(tooltip);
+      });
+
+      stayLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const targetPin = stayPinById.get(link.dataset.target);
+          if (!targetPin) return;
+          setStayActive(targetPin);
+          targetPin.focus({ preventScroll: true });
+        });
+      });
+
+      stayItems.forEach((item) => {
+        item.addEventListener("click", (event) => {
+          if (event.target.closest("a, button")) return;
+          const link = item.querySelector(".stay-link");
+          const targetPin = link ? stayPinById.get(link.dataset.target) : null;
+          if (!targetPin) return;
+          setStayActive(targetPin);
+        });
+      });
+
+      addStayMapButtons();
+
+      document
+        .querySelectorAll(".stay-card .food-map-jump")
+        .forEach((button) => {
+          button.addEventListener("click", () => {
+            const targetPin = stayPinById.get(button.dataset.target);
+            if (!targetPin) return;
+            setStayActive(targetPin);
+            if (stayMapCard) {
+              const prefersReduced =
+                window.matchMedia &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+              stayMapCard.scrollIntoView({
+                behavior: prefersReduced ? "auto" : "smooth",
+                block: "center",
+              });
+            }
+            targetPin.focus({ preventScroll: true });
+          });
+        });
+
+      stayPins.forEach((pin) => {
+        pin.addEventListener("click", () => {
+          setStayActive(pin);
+        });
+      });
+
+      if (stayPins.length) {
+        setStayActive(stayPins[0]);
+      }
+    </script>
+    <script>
+      const visitorArrivi = document.getElementById("visitor-arrivi");
+      const visitorPresenze = document.getElementById("visitor-presenze");
+      const visitorYear = document.getElementById("visitor-year");
+
+      const formatNumber = (value) =>
+        new Intl.NumberFormat("it-IT").format(Math.round(value));
+
+      const extractLatestObservation = (payload) => {
+        const dataset = payload?.data?.dataSets?.[0];
+        const series = dataset?.series;
+        const seriesKey = series ? Object.keys(series)[0] : null;
+        const observations = seriesKey ? series[seriesKey]?.observations : null;
+        const timeValues =
+          payload?.data?.structure?.dimensions?.observation?.[0]?.values || [];
+
+        if (!observations || !timeValues.length) {
+          return null;
+        }
+
+        let latest = null;
+        Object.keys(observations).forEach((key) => {
+          const idx = Number(key);
+          const value = observations[key]?.[0];
+          const time = timeValues[idx]?.id;
+          if (value == null || !time) {
+            return;
+          }
+          if (!latest || time > latest.time) {
+            latest = { time, value };
+          }
+        });
+
+        return latest;
+      };
+
+      const loadVisitorData = async () => {
+        try {
+          const response = await fetch("data/istat-grosseto.json");
+          if (!response.ok) {
+            throw new Error("Local data not found");
+          }
+          const data = await response.json();
+          if (!data || data.arrivi == null || data.presenze == null) {
+            throw new Error("Invalid data");
+          }
+          visitorArrivi.textContent = formatNumber(data.arrivi);
+          visitorPresenze.textContent = formatNumber(data.presenze);
+          visitorYear.textContent = `Anno: ${data.anno}`;
+        } catch (error) {
+          if (visitorYear) {
+            visitorYear.textContent = "Dati non disponibili al momento.";
+          }
+        }
+      };
+
+      loadVisitorData();
+
+      const visitorWidget = document.getElementById("visitor-widget");
+      const visitorClose = document.querySelector(".visitor-close");
+      const visitorWidgetState = "visitor-widget-collapsed";
+      if (visitorWidget && window.localStorage) {
+        const isCollapsed = window.localStorage.getItem(visitorWidgetState) === "1";
+        if (isCollapsed) {
+          visitorWidget.classList.add("is-collapsed");
+        }
+      }
+      if (visitorClose && visitorWidget) {
+        visitorClose.addEventListener("click", (event) => {
+          event.stopPropagation();
+          visitorWidget.classList.toggle("is-collapsed");
+          if (window.localStorage) {
+            window.localStorage.setItem(visitorWidgetState, visitorWidget.classList.contains("is-collapsed") ? "1" : "0");
+          }
+        });
+      }
+
+      if (visitorWidget) {
+        visitorWidget.addEventListener("click", () => {
+          if (visitorWidget.classList.contains("is-collapsed")) {
+            visitorWidget.classList.remove("is-collapsed");
+            if (window.localStorage) {
+              window.localStorage.setItem(visitorWidgetState, "0");
+            }
+          }
+        });
+      }
+    </script>
+    <script src="weather-widget.js?v=20260201"></script>
+  </body>
+</html>
+
+
