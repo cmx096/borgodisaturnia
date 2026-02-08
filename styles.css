@@ -1296,7 +1296,7 @@ h1 {
 .activity-video-grid {
   display: grid;
   gap: 1.4rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .gallery-title {
@@ -2158,6 +2158,95 @@ body.is-mobile-preview .stay-item:last-child {
 
 .activity-meta a:hover {
   color: var(--terracotta);
+}
+
+.info-list {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.info-item {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 16px;
+  border: 1px solid rgba(200, 180, 150, 0.5);
+  background: rgba(255, 247, 238, 0.92);
+  box-shadow: 0 10px 20px rgba(47, 43, 37, 0.08);
+  border-left: 4px solid rgba(200, 114, 77, 0.7);
+}
+
+.info-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16rem;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.info-text {
+  font-size: 0.92rem;
+  color: #5b574d;
+  line-height: 1.5;
+}
+
+.info-text a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.info-text a:hover {
+  color: var(--terracotta);
+}
+
+.info-highlight {
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 18px;
+  border: 1px solid rgba(200, 180, 150, 0.6);
+  background: rgba(255, 247, 238, 0.95);
+  box-shadow: 0 12px 24px rgba(47, 43, 37, 0.1);
+}
+
+.info-item--access {
+  border-left-color: var(--terracotta);
+}
+
+.info-item--parking {
+  border-left-color: var(--market);
+}
+
+.info-item--costs {
+  border-left-color: var(--bar);
+}
+
+.info-item--services {
+  border-left-color: var(--olive);
+}
+
+.info-item--golf {
+  border-left-color: var(--food);
+}
+
+.info-item--fitness {
+  border-left-color: var(--bar);
+}
+
+.info-item--contact {
+  border-left-color: var(--terracotta);
+}
+
+.info-item--site {
+  border-left-color: var(--market);
+}
+
+.info-item--tips {
+  border-left-color: var(--food);
+}
+
+.info-item--pets {
+  border-left-color: var(--ink);
 }
 
 @media (min-width: 900px) {
