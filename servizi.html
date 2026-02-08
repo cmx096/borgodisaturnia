@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servizi - Borgo di Saturnia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260208" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJHTPDBTJT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-NJHTPDBTJT', { send_page_view: false });
+    </script>
+    <meta name="google-site-verification" content="65cwK7kglkx99sZnT142liwdmGItBqiuk-l00JaFisA" />
+  </head>
+  <body class="services-page">
+    <div
+      class="global-weather"
+      data-thermal="37.5"
+    >
+      <span class="global-weather-label">Meteo Saturnia</span>
+      <span class="global-weather-value" aria-live="polite">Caricamento...</span>
+      <div class="global-weather-row">
+        <span class="global-weather-thermal"></span>
+        <button class="global-weather-toggle" type="button" aria-label="Apri meteo settimanale">
+          <svg class="global-weather-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="global-weather-close"
+        type="button"
+        aria-label="Chiudi meteo"
+      >
+        X <span class="weather-close-text">Chiudi</span>
+      </button>
+      <div class="global-weather-weekly" id="global-weather-weekly" hidden>
+        <p class="global-weather-weekly-title">Prossimi 7 giorni</p>
+        <p class="global-weather-weekly-status">Caricamento...</p>
+        <ul class="global-weather-weekly-list"></ul>
+      </div>
+    </div>
+    <div class="visitor-widget" id="visitor-widget" aria-live="polite">
+      <span class="visitor-eyebrow">Stima visitatori</span>
+      <p class="visitor-title">Provincia di Grosseto</p>
+      <div class="visitor-grid">
+        <div class="visitor-stat">
+          <span class="visitor-label">Arrivi</span>
+          <span class="visitor-value" id="visitor-arrivi">-</span>
+        </div>
+        <div class="visitor-stat">
+          <span class="visitor-label">Presenze</span>
+          <span class="visitor-value" id="visitor-presenze">-</span>
+        </div>
+      </div>
+      <p class="visitor-meta" id="visitor-year">Anno: -</p>
+      <button class="visitor-close" type="button" aria-label="Chiudi stima visitatori">X <span class="visitor-close-text">Chiudi</span></button>
+      <p class="visitor-source">
+        Fonte: ISTAT, movimento clienti negli esercizi ricettivi (annuale).
+      </p>
+    </div>
+    <main class="page">
+      <nav class="site-nav" aria-label="Menu principale">
+        <a class="nav-tab" href="index.html">Borgo</a>
+        <a class="nav-tab" href="galleria.html">Galleria</a>
+        <a class="nav-tab" href="dove-mangiare.html">
+          <span class="nav-label-full">Mangiare</span>
+          <span class="nav-label-short">Mangiare</span>
+        </a>
+        <a class="nav-tab" href="dove-dormire.html">
+          <span class="nav-label-full">Dormire</span>
+          <span class="nav-label-short">Dormire</span>
+        </a>
+        <a class="nav-tab is-active" href="servizi.html" aria-current="page">Servizi</a>
+        <details class="nav-dropdown">
+          <summary class="nav-tab">
+            <span class="nav-label-full">Cosa fare</span>
+            <span class="nav-label-short">Cosa fare</span>
+          </summary>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="cosa-fare.html#cavallo">Cavallo</a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#degustazioni">
+              Degustazioni
+            </a>
+            <a class="nav-dropdown-item" href="cosa-fare.html#golf">Golf</a>
+          </div>
+        </details>
+        <a class="nav-tab" href="eventi.html">Eventi</a>
+        <a class="nav-tab" href="nelle-vicinanze.html">
+          <span class="nav-label-full">Nelle vicinanze</span>
+          <span class="nav-label-short">Vicinanze</span>
+        </a>
+      </nav>
+      <header class="hero">
+        <p class="eyebrow">Borgo di Saturnia</p>
+        <h1>Servizi</h1>
+        <p class="subtitle">
+          Informazioni utili e servizi essenziali per il borgo.
+        </p>
+      </header>
+      <section class="gallery-section" id="servizi">
+        <h2 class="gallery-title">Servizi</h2>
+        <div class="activity-card">
+          <p class="eyebrow">Servizi pubblici e finanziari</p>
+          <div class="activity-content">
+            <div class="activity-block">
+              <p class="activity-name">Poste Italiane - Ufficio Postale</p>
+              <span class="activity-meta">
+                Tel. <a href="tel:+3905641783126">+39 0564 1783126</a>
+              </span>
+              <p class="activity-description">
+                Servizi postali (raccomandate, pacchi, conti BancoPosta, sportello).
+              </p>
+              <span class="activity-meta">
+                Indirizzo:
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Piazza%20Vittorio%20Veneto%2C%2040%2C%2058014%20Manciano%20(Saturnia)%20GR"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Piazza Vittorio Veneto, 40, 58014 Manciano (Saturnia) GR
+                </a>
+              </span>
+            </div>
+            <div class="activity-block">
+              <div class="activity-name-row">
+                <img
+                  class="activity-mini-logo is-wide"
+                  src="assets/images/logo/BancaTemaLogo.jpg"
+                  alt="Logo Banca TEMA"
+                  loading="lazy"
+                />
+                <p class="activity-name">Banca TEMA</p>
+              </div>
+              <span class="activity-meta">
+                Tel. <a href="tel:+390564601525">+39 0564 601525</a>
+              </span>
+              <p class="activity-description">
+                Filiale di banca cooperativa con sportello e ATM; servizi per privati e imprese.
+              </p>
+              <span class="activity-meta">
+                Indirizzo:
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Piazza%20Vittorio%20Veneto%2C%208%2C%2058014%20Saturnia%20GR"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Piazza Vittorio Veneto, 8, 58014 Saturnia GR
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="activity-card">
+          <p class="eyebrow">Farmacia</p>
+          <div class="activity-content">
+            <div class="activity-block">
+              <p class="activity-name">Farmacia Magaldi</p>
+              <span class="activity-meta">
+                Tel. <a href="tel:+390564601028">+39 0564 601028</a>
+              </span>
+              <p class="activity-description">
+                Farmacia di zona con preparazioni e servizi farmaceutici.
+              </p>
+              <span class="activity-meta">
+                Indirizzo:
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Via%20Aurinia%2C%202%2C%2058014%20Saturnia%20GR"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Via Aurinia, 2, 58014 Saturnia GR
+                </a>
+              </span>
+              <span class="activity-meta">
+                Orari standard: Lun-Sab 09:00-13:00 / 16:00-19:00, Dom chiuso.
+              </span>
+              <span class="activity-meta">
+                Nota: gli orari possono variare.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const visitorArrivi = document.getElementById("visitor-arrivi");
+      const visitorPresenze = document.getElementById("visitor-presenze");
+      const visitorYear = document.getElementById("visitor-year");
+
+      const formatNumber = (value) =>
+        new Intl.NumberFormat("it-IT").format(Math.round(value));
+
+      const extractLatestObservation = (payload) => {
+        const dataset = payload?.data?.dataSets?.[0];
+        const series = dataset?.series;
+        const seriesKey = series ? Object.keys(series)[0] : null;
+        const observations = seriesKey ? series[seriesKey]?.observations : null;
+        const timeValues =
+          payload?.data?.structure?.dimensions?.observation?.[0]?.values || [];
+
+        if (!observations || !timeValues.length) {
+          return null;
+        }
+
+        let latest = null;
+        Object.keys(observations).forEach((key) => {
+          const idx = Number(key);
+          const value = observations[key]?.[0];
+          const time = timeValues[idx]?.id;
+          if (value == null || !time) {
+            return;
+          }
+          if (!latest || time > latest.time) {
+            latest = { time, value };
+          }
+        });
+
+        return latest;
+      };
+
+      const loadVisitorData = async () => {
+        try {
+          const response = await fetch("data/istat-grosseto.json");
+          if (!response.ok) {
+            throw new Error("Local data not found");
+          }
+          const data = await response.json();
+          if (!data || data.arrivi == null || data.presenze == null) {
+            throw new Error("Invalid data");
+          }
+          visitorArrivi.textContent = formatNumber(data.arrivi);
+          visitorPresenze.textContent = formatNumber(data.presenze);
+          visitorYear.textContent = `Anno: ${data.anno}`;
+        } catch (error) {
+          if (visitorYear) {
+            visitorYear.textContent = "Dati non disponibili al momento.";
+          }
+        }
+      };
+
+      loadVisitorData();
+
+      const visitorWidget = document.getElementById("visitor-widget");
+      const visitorClose = document.querySelector(".visitor-close");
+      const visitorWidgetState = "visitor-widget-collapsed";
+      if (visitorWidget && window.localStorage) {
+        const isCollapsed = window.localStorage.getItem(visitorWidgetState) === "1";
+        if (isCollapsed) {
+          visitorWidget.classList.add("is-collapsed");
+        }
+      }
+      if (visitorClose && visitorWidget) {
+        visitorClose.addEventListener("click", (event) => {
+          event.stopPropagation();
+          visitorWidget.classList.toggle("is-collapsed");
+          if (window.localStorage) {
+            window.localStorage.setItem(visitorWidgetState, visitorWidget.classList.contains("is-collapsed") ? "1" : "0");
+          }
+        });
+      }
+
+      if (visitorWidget) {
+        visitorWidget.addEventListener("click", () => {
+          if (visitorWidget.classList.contains("is-collapsed")) {
+            visitorWidget.classList.remove("is-collapsed");
+            if (window.localStorage) {
+              window.localStorage.setItem(visitorWidgetState, "0");
+            }
+          }
+        });
+      }
+    </script>
+    <div class="consent-banner is-hidden" role="dialog" aria-modal="false" aria-label="Consenso cookie">
+      <p class="consent-banner__title">Preferenze cookie</p>
+      <p class="consent-banner__text">Usiamo cookie di analisi per misurare le visite e migliorare il sito. Puoi accettare o rifiutare.</p>
+      <div class="consent-banner__actions">
+        <button class="consent-banner__button consent-banner__button--accept" type="button" data-consent-accept>Accetta</button>
+        <button class="consent-banner__button consent-banner__button--reject" type="button" data-consent-reject>Rifiuta</button>
+      </div>
+    </div>
+    <script src="consent.js?v=20260208"></script>
+    <script src="weather-widget.js?v=20260201"></script>
+  </body>
+</html>
+
