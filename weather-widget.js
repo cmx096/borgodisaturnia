@@ -1,5 +1,7 @@
 ﻿(() => {
   const widget = document.querySelector(".global-weather");
+  const visitorWidget = document.getElementById("visitor-widget");
+  const visitorWidgetState = "visitor-widget-collapsed";
   if (!widget) return;
 
   const weatherValue = widget.querySelector(".global-weather-value");
@@ -297,6 +299,28 @@
     }
   };
 
+  const closeVisitorWidget = () => {
+    if (!visitorWidget) return;
+    if (visitorWidget.classList.contains("is-collapsed")) return;
+    visitorWidget.classList.add("is-collapsed");
+    if (window.localStorage) {
+      window.localStorage.setItem(visitorWidgetState, "1");
+    }
+  };
+
+  let scrollTicking = false;
+  const handleScrollClose = () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(() => {
+      scrollTicking = false;
+      if (widget && widget.classList.contains("is-open")) {
+        setWeeklyOpen(false);
+      }
+      closeVisitorWidget();
+    });
+  };
+
   const toggleWeekly = () => {
     const isOpen = widget.classList.contains("is-open");
     setWeeklyOpen(!isOpen);
@@ -335,6 +359,8 @@
     if (widget.contains(event.target)) return;
     setWeeklyOpen(false);
   });
+
+  window.addEventListener("scroll", handleScrollClose, { passive: true });
 
   updateThermal();
   fetchWeather();

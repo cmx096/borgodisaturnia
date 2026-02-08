@@ -690,9 +690,9 @@ body.is-mobile-preview .stay-map-card .map-frame img {
   right: 0.35rem;
   height: 20px;
   border-radius: 999px;
-  border: 1px solid rgba(200, 180, 150, 0.6);
+  border: 1px solid rgba(200, 114, 77, 0.8);
   background: rgba(255, 247, 238, 0.95);
-  color: var(--ink);
+  color: var(--terracotta);
   font-size: 0.62rem;
   letter-spacing: 0.08rem;
   text-transform: uppercase;
@@ -705,7 +705,7 @@ body.is-mobile-preview .stay-map-card .map-frame img {
 }
 
 .global-weather-close:hover {
-  border-color: rgba(200, 114, 77, 0.7);
+  border-color: var(--terracotta);
   color: var(--terracotta);
 }
 
@@ -843,9 +843,9 @@ body.is-mobile-preview .stay-map-card .map-frame img {
   right: 0.35rem;
   height: 20px;
   border-radius: 999px;
-  border: 1px solid rgba(200, 180, 150, 0.6);
+  border: 1px solid rgba(200, 114, 77, 0.8);
   background: rgba(255, 247, 238, 0.95);
-  color: var(--ink);
+  color: var(--terracotta);
   font-size: 0.62rem;
   letter-spacing: 0.08rem;
   text-transform: uppercase;
@@ -858,7 +858,7 @@ body.is-mobile-preview .stay-map-card .map-frame img {
 }
 
 .visitor-close:hover {
-  border-color: rgba(200, 114, 77, 0.7);
+  border-color: var(--terracotta);
   color: var(--terracotta);
 }
 
