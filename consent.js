@@ -28,6 +28,15 @@
     }
   };
 
+  let pageViewSent = false;
+  const sendPageView = () => {
+    if (pageViewSent || typeof window.gtag !== "function") {
+      return;
+    }
+    window.gtag("event", "page_view");
+    pageViewSent = true;
+  };
+
   const saveChoice = (value) => {
     try {
       window.localStorage.setItem(CONSENT_KEY, value);
@@ -55,6 +64,7 @@
   const choice = getChoice();
   if (choice === "granted") {
     applyConsent(consentGranted);
+    sendPageView();
     hideBanner();
   } else if (choice === "denied") {
     applyConsent(consentDenied);
@@ -67,6 +77,7 @@
     acceptButton.addEventListener("click", () => {
       applyConsent(consentGranted);
       saveChoice("granted");
+      sendPageView();
       hideBanner();
     });
   }
