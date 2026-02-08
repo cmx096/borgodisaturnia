@@ -455,9 +455,9 @@ body.is-mobile-preview .stay-header {
 }
 
 body.is-mobile-preview .stay-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
 }
 
 body.is-mobile-preview .stay-name {
@@ -1811,6 +1811,12 @@ h1 {
   color: var(--terracotta);
 }
 
+.stay-title-compact {
+  font-size: clamp(0.95rem, 2.1vw, 1.35rem);
+  letter-spacing: 0.03rem;
+  white-space: nowrap;
+}
+
 .food-group {
   display: grid;
   gap: 0.8rem;
@@ -1849,6 +1855,11 @@ h1 {
   .food-title {
     font-size: 1.4rem;
     letter-spacing: 0.1rem;
+  }
+
+  .stay-title-compact {
+    font-size: 0.88rem;
+    letter-spacing: 0.01rem;
   }
 }
 
@@ -2011,9 +2022,9 @@ h1 {
 }
 
 .stay-logo {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   object-fit: cover;
   border: 1px solid rgba(200, 180, 150, 0.5);
   background: rgba(255, 247, 238, 0.9);
