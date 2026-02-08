@@ -1293,6 +1293,12 @@ h1 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.activity-video-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: 1fr;
+}
+
 .gallery-title {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
