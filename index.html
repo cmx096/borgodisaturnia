@@ -84,8 +84,29 @@
         Fonte: ISTAT, movimento clienti negli esercizi ricettivi (annuale).
       </p>
     </div>
-    <main class="page">
-      <nav class="site-nav" aria-label="Menu principale">
+            <div class="language-widget" id="language-widget" role="group" aria-label="Seleziona lingua">
+      <button class="language-option is-active" type="button" data-lang="it" aria-pressed="true" title="Italiano">
+        <img class="language-flag" src="assets/images/flags/it.svg" alt="" aria-hidden="true" />
+      </button>
+      <button class="language-option" type="button" data-lang="en" aria-pressed="false" title="English">
+        <img class="language-flag" src="assets/images/flags/en.svg" alt="" aria-hidden="true" />
+      </button>
+      <button class="language-option" type="button" data-lang="fr" aria-pressed="false" title="Français">
+        <img class="language-flag" src="assets/images/flags/fr.svg" alt="" aria-hidden="true" />
+      </button>
+      <button class="language-option" type="button" data-lang="de" aria-pressed="false" title="Deutsch">
+        <img class="language-flag" src="assets/images/flags/de.svg" alt="" aria-hidden="true" />
+      </button>
+      <button class="language-option" type="button" data-lang="es" aria-pressed="false" title="Español">
+        <img class="language-flag" src="assets/images/flags/es.svg" alt="" aria-hidden="true" />
+      </button>
+    </div>
+    <div id="google_translate_element" class="translate-element" aria-hidden="true"></div>
+    
+      <main class="page">
+
+    
+        <nav class="site-nav" aria-label="Menu principale">
         <a class="nav-tab is-active" href="index.html" aria-current="page">Borgo</a>
         <a class="nav-tab" href="galleria.html">Galleria</a>
         <a class="nav-tab" href="dove-mangiare.html">
@@ -1334,8 +1355,16 @@
     </div>
     <script src="consent.js?v=20260208"></script>
     <script src="weather-widget.js?v=20260201"></script>
-  </body>
+      <script src="language-widget.js?v=20260209"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+</body>
 </html>
+
+
+
+
+
 
 
 

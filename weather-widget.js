@@ -11,6 +11,7 @@
   const weeklyStatus = widget.querySelector(".global-weather-weekly-status");
   const closeButton = widget.querySelector(".global-weather-close");
   const toggleButton = widget.querySelector(".global-weather-toggle");
+  const languageWidget = document.querySelector(".language-widget");
   const thermalTemp = Number.parseFloat(widget.dataset.thermal) || 37.5;
   const degreeSymbol = "\u00b0";
   const bulletSymbol = "\u2022";
@@ -290,6 +291,17 @@
     }
   };
 
+  const updateLanguagePosition = (open) => {
+    if (!languageWidget || !widget) return;
+    if (!open) {
+      languageWidget.style.top = "";
+      return;
+    }
+    const rect = widget.getBoundingClientRect();
+    const offset = 10;
+    languageWidget.style.top = `${Math.round(rect.bottom + offset)}px`;
+  };
+
   const setWeeklyOpen = (open) => {
     if (!weeklyPanel) return;
     weeklyPanel.hidden = !open;
@@ -297,6 +309,7 @@
     if (toggleButton) {
       toggleButton.setAttribute("aria-expanded", String(open));
     }
+    updateLanguagePosition(open);
   };
 
   const closeVisitorWidget = () => {
@@ -325,6 +338,14 @@
     const isOpen = widget.classList.contains("is-open");
     setWeeklyOpen(!isOpen);
   };
+
+  if (languageWidget) {
+    window.addEventListener("resize", () => {
+      if (widget && widget.classList.contains("is-open")) {
+        updateLanguagePosition(true);
+      }
+    });
+  }
 
   if (toggleButton) {
     if (weeklyPanel && weeklyPanel.id) {
