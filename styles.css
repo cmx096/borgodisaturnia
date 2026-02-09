@@ -1258,6 +1258,10 @@ h1 {
   gap: 1.6rem;
 }
 
+.activity-section#acque-termali {
+  width: min(1240px, 100%);
+}
+
 .gallery-section.gallery-video-section#galleria {
   margin-top: -1.6rem;
 }
@@ -1313,7 +1317,7 @@ h1 {
   background: transparent;
   box-shadow: none;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .activity-image-grid .gallery-card.is-wide {
@@ -1562,12 +1566,7 @@ h1 {
 
 .activity-image-grid .gallery-card.page-left::after,
 .activity-image-grid .gallery-card.page-right::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.55;
-  mix-blend-mode: multiply;
+  content: none;
 }
 
 .activity-image-grid .gallery-card.page-left::after {
@@ -1663,10 +1662,10 @@ h1 {
   width: 100%;
   max-height: 70vh;
   display: block;
-  border-radius: 18px;
-  border: 1px solid rgba(200, 180, 150, 0.5);
-  box-shadow: 0 14px 30px rgba(47, 43, 37, 0.2);
-  background: #0f0f0f;
+  border-radius: 16px;
+  border: none;
+  box-shadow: none;
+  background: transparent;
   object-fit: contain;
 }
 
@@ -1882,6 +1881,13 @@ h1 {
   display: grid;
   gap: 1rem;
   text-align: left;
+}
+
+.activity-card--image-grid {
+  padding: clamp(1.2rem, 3vw, 2.2rem);
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .food-card,
