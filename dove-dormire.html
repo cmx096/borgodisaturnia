@@ -118,8 +118,12 @@
         <div class="stay-layout food-layout">
           <div class="stay-card food-card">
             <p class="eyebrow">Dove dormire a Saturnia</p>
-            <h2 class="stay-title food-title">Nel borgo</h2>
-            <ul class="stay-list food-list">
+            <details class="stay-accordion">
+              <summary class="stay-accordion-summary">
+                <h2 class="stay-title food-title">Nel borgo</h2>
+              </summary>
+              <div class="stay-accordion-body">
+                <ul class="stay-list food-list">
               <li class="stay-item food-item">
                 <div class="food-block food-block-main">
                   <div class="food-header">
@@ -433,9 +437,15 @@
                   </div>
                 </div>
               </li>
-            </ul>
-            <h2 class="stay-title food-title stay-title-compact">Strutture ricettive fuori dal borgo</h2>
-            <ul class="stay-list food-list">
+                </ul>
+              </div>
+            </details>
+            <details class="stay-accordion">
+              <summary class="stay-accordion-summary">
+                <h2 class="stay-title food-title stay-title-compact">Strutture ricettive fuori dal borgo</h2>
+              </summary>
+              <div class="stay-accordion-body">
+                <ul class="stay-list food-list">
               <li class="stay-item food-item">
                 <div class="food-block food-block-main">
                   <div class="food-header">
@@ -638,7 +648,9 @@
               </li>
             </ul>
           </div>
-          <div class="stay-map-card food-map-card">
+        </details>
+      </div>
+      <div class="stay-map-card food-map-card">
             <p class="eyebrow">Mappa del borgo</p>
             <h2 class="stay-title food-title">Dove si trovano</h2>
             <div class="map stay-map food-map show-hotels" data-view="fumetto">

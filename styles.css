@@ -1953,6 +1953,67 @@ h1 {
   white-space: nowrap;
 }
 
+.stay-accordion {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stay-accordion + .stay-accordion {
+  margin-top: 1.2rem;
+}
+
+.stay-accordion-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.stay-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.stay-accordion-summary::after {
+  content: "+";
+  font-size: 1rem;
+  color: var(--terracotta);
+  font-weight: 700;
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(200, 114, 77, 0.85);
+  background: rgba(255, 247, 238, 0.98);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stay-accordion[open] .stay-accordion-summary::after {
+  content: "–";
+}
+
+.stay-accordion-summary .stay-title {
+  margin: 0;
+}
+
+.stay-accordion-body {
+  margin-top: 0.6rem;
+}
+
+@media (min-width: 900px) {
+  .stay-accordion-summary {
+    padding-right: 0.6rem;
+  }
+
+  .stay-accordion-summary::after {
+    margin-right: 1rem;
+  }
+}
+
 .food-group {
   display: grid;
   gap: 0.8rem;
@@ -2114,7 +2175,7 @@ h1 {
   border-radius: 16px;
   border: 1px solid rgba(200, 114, 77, 0.35);
   box-shadow: 0 18px 34px rgba(200, 114, 77, 0.28);
-  padding: 0.75rem 0.9rem;
+  padding: 0.6rem 0.7rem;
 }
 
 .stay-item.is-active {
@@ -2122,7 +2183,13 @@ h1 {
   border-radius: 16px;
   border: 1px solid rgba(95, 107, 61, 0.35);
   box-shadow: 0 18px 34px rgba(95, 107, 61, 0.2);
-  padding: 0.75rem 0.9rem;
+  padding: 0.6rem 0.7rem;
+}
+
+.stay-card .food-item,
+.stay-card .stay-item {
+  width: calc(100% - 2.4rem);
+  margin-right: 2.4rem;
 }
 
 .food-header {
@@ -2524,6 +2591,13 @@ body.is-mobile-preview .stay-item:last-child {
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(47, 43, 37, 0.12);
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+@media (min-width: 900px) {
+  .food-map-jump {
+    right: 1rem;
+    bottom: 1rem;
+  }
 }
 
 .food-map-icon {
