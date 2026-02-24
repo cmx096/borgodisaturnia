@@ -2349,6 +2349,10 @@ h1 {
   object-fit: contain;
 }
 
+.food-logo.is-slim {
+  width: 100px;
+}
+
 .logo-link {
   display: inline-flex;
   text-decoration: none;
@@ -3981,6 +3985,10 @@ figcaption {
   .food-logo.is-wide {
     width: 120px;
     height: 32px;
+  }
+
+  .food-logo.is-slim {
+    width: 88px;
   }
 
   .food-name {
