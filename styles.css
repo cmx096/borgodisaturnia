@@ -3722,6 +3722,13 @@ body.is-mobile-preview .stay-item:last-child {
   object-fit: cover;
 }
 
+.food-map .map-pin[data-id="bar-barakka"] .pin-image {
+  width: 70px;
+  height: 24px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
 .pin-info-button {
   display: inline-flex;
   align-items: center;
